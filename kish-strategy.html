@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#635bff">
+<title>Strategy Execution | بنادر و فرودگاه‌های کیش</title>
+<style>
+:root{
+  --bg:#f7f8fc;--card:#fff;--ink:#1d2330;--muted:#6b7280;--line:#e6e8f0;
+  --purple:#635bff;--purple2:#7c73ff;--purple-soft:#eeecff;--blue:#377dff;
+  --green:#18a66a;--amber:#e6952a;--red:#dc5a5a;--gray:#9aa2b1;
+  --sidebar:#fbfbfe;--shadow:0 8px 28px rgba(31,35,48,.08);
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,"Segoe UI",Arial,sans-serif;font-size:14px}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.en{direction:ltr;unicode-bidi:embed;display:inline-block}
+.app{min-height:100vh;display:grid;grid-template-columns:230px minmax(0,1fr)}
+.sidebar{position:sticky;top:0;height:100vh;background:var(--sidebar);border-left:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;z-index:20}
+.brand{display:flex;gap:10px;align-items:center;padding:6px 8px 18px}
+.brandmark{width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,var(--purple),#8d86ff);color:white;display:grid;place-items:center;font-weight:900;font-size:18px;box-shadow:0 8px 20px rgba(99,91,255,.22)}
+.brand h1{font-size:13px;line-height:1.6;margin:0}.brand small{font-size:9px;color:var(--muted)}
+.nav{display:grid;gap:5px}
+.nav button{border:0;background:transparent;min-height:44px;border-radius:10px;padding:10px 12px;text-align:right;color:#4d5564;display:flex;align-items:center;gap:10px;font-weight:700}
+.nav button:hover,.nav button.active{background:var(--purple-soft);color:var(--purple)}
+.nav .ico{width:22px;text-align:center;font-size:16px}
+.side-meta{margin-top:auto;padding:12px 10px;border-top:1px solid var(--line);color:var(--muted);font-size:10px;line-height:1.8}
+.main{min-width:0}
+.topbar{height:66px;position:sticky;top:0;background:rgba(247,248,252,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 22px;z-index:15}
+.topbar h2{font-size:17px;margin:0}.top-sub{font-size:10px;color:var(--muted);margin-top:3px}
+.top-actions{display:flex;gap:8px}
+.btn{border:1px solid var(--line);background:#fff;color:var(--ink);padding:9px 12px;border-radius:10px;font-weight:700}
+.btn:hover{border-color:#cfd3df}.btn.primary{background:var(--purple);color:white;border-color:var(--purple)}.btn.ghost{background:transparent}
+.content{padding:20px 22px 90px;max-width:1500px;margin:auto}
+.page{display:none}.page.active{display:block}
+.notice{background:#fff;border:1px solid var(--line);border-right:4px solid var(--purple);border-radius:12px;padding:11px 13px;color:#505767;font-size:11px;line-height:1.8;margin-bottom:14px}
+.view-tabs{display:flex;gap:4px;background:#eceef4;padding:4px;border-radius:11px;width:max-content;margin-bottom:16px}
+.view-tabs button{border:0;background:transparent;padding:8px 14px;border-radius:8px;font-weight:800;color:#6b7280}
+.view-tabs button.active{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:18px 0 12px}
+.section-head h3{margin:0;font-size:16px}.section-head p{margin:4px 0 0;color:var(--muted);font-size:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:0 2px 8px rgba(20,26,40,.03)}
+.map-shell{overflow:auto;padding:2px 2px 18px}
+.ultimate{max-width:760px;margin:0 auto;background:linear-gradient(135deg,#25273d,#35385b);color:white;border-radius:16px;padding:20px 22px;box-shadow:var(--shadow);position:relative}
+.ultimate:after{content:"";position:absolute;width:2px;height:28px;background:#cfd3df;bottom:-28px;left:50%}
+.ultimate .eyebrow{font-size:9px;letter-spacing:.12em;color:#c9c6ff;font-weight:800}.ultimate h3{font-size:18px;line-height:1.85;margin:8px 0 0}
+.pillars-line{display:grid;grid-template-columns:repeat(6,minmax(220px,1fr));gap:12px;min-width:1380px;padding-top:42px;position:relative}
+.pillars-line:before{content:"";position:absolute;top:28px;right:8%;left:8%;height:2px;background:#cfd3df}
+.pillar-card{position:relative;padding:14px;border-top:4px solid var(--pcolor)}
+.pillar-card:before{content:"";position:absolute;top:-18px;left:50%;width:2px;height:14px;background:#cfd3df}
+.pillar-title{display:flex;gap:8px;align-items:flex-start}.pillar-no{width:28px;height:28px;border-radius:8px;background:color-mix(in srgb,var(--pcolor) 12%,white);color:var(--pcolor);display:grid;place-items:center;font-weight:900}
+.pillar-card h4{font-size:12px;line-height:1.6;margin:0}.pillar-card .en{font-size:8.5px;color:var(--muted);margin-top:2px}
+.pillar-desc{font-size:9.5px;color:#626a79;line-height:1.8;min-height:52px;margin:9px 0}
+.kpi-mini{border-top:1px solid var(--line);padding-top:8px}.kpi-mini div{font-size:8.6px;color:#596170;margin:5px 0;display:flex;gap:6px;align-items:center}.kpi-mini i{width:6px;height:6px;background:var(--pcolor);border-radius:50%}
+.obj-chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.obj-chip{border:1px solid var(--line);background:#fff;padding:4px 6px;border-radius:7px;font-size:8.5px;color:#525a68}
+.obj-chip:hover{border-color:var(--purple);color:var(--purple)}
+.toolbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.input,.select,.textarea{border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 10px;color:var(--ink);outline:none}
+.input:focus,.select:focus,.textarea:focus{border-color:#9c96ff;box-shadow:0 0 0 3px rgba(99,91,255,.08)}
+.input.search{min-width:260px}.select{min-width:180px}
+.cascade{display:grid;gap:10px}
+.group{overflow:hidden}.group-head{padding:12px 14px;background:#fbfbfd;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}.group-head strong{font-size:12px}.group-head small{font-size:9px;color:var(--muted)}
+.obj-row{padding:12px 14px;border-bottom:1px solid #f0f1f5}.obj-row:last-child{border-bottom:0}
+.obj-top{display:grid;grid-template-columns:minmax(0,1fr) 115px 105px 90px;gap:12px;align-items:center}
+.obj-name{display:flex;gap:9px;align-items:flex-start}.oid{font-weight:900;color:var(--purple);background:var(--purple-soft);border-radius:7px;padding:4px 6px;font-size:9px}.obj-name h4{font-size:11px;line-height:1.65;margin:0}
+.meta{font-size:8.5px;color:var(--muted)}
+.progress{height:7px;background:#eceef4;border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;background:var(--purple);border-radius:20px}
+.status{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:800;color:#5b6270}.dot{width:7px;height:7px;border-radius:50%;background:var(--gray)}.dot.ok{background:var(--green)}.dot.warn{background:var(--amber)}.dot.bad{background:var(--red)}
+.toggle-krs{border:0;background:transparent;color:var(--purple);font-size:9px;font-weight:800;padding:3px}
+.krs{display:none;margin:10px 36px 0;border-right:2px solid #e6e4ff;padding-right:12px}.krs.show{display:grid;gap:7px}
+.kr{display:grid;grid-template-columns:42px minmax(0,1fr) 100px 78px;gap:8px;align-items:center;background:#fbfbfe;border:1px solid #eeeff5;border-radius:9px;padding:8px 10px}
+.kr strong{font-size:8px;color:var(--purple)}.kr-name{font-size:9px}
+.board{display:grid;grid-template-columns:repeat(4,minmax(230px,1fr));gap:10px;overflow:auto;padding-bottom:8px}
+.board-col{min-height:320px;background:#eef0f5;border-radius:12px;padding:9px;min-width:230px}.board-head{display:flex;justify-content:space-between;align-items:center;padding:4px 3px 10px;font-size:10px;font-weight:900}.count{background:#fff;border:1px solid var(--line);padding:2px 7px;border-radius:20px;color:var(--muted)}
+.board-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:7px}.board-card h4{font-size:10px;line-height:1.55;margin:0 0 7px}.board-card .foot{display:flex;justify-content:space-between;font-size:8px;color:var(--muted)}
+.kpi-grid{display:grid;grid-template-columns:repeat(3,minmax(240px,1fr));gap:10px}
+.kpi-card{padding:13px}.kpi-card h4{font-size:10px;margin:0 0 2px}.kpi-card .pname{font-size:8.5px;color:var(--muted)}
+.kpi-fields{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.kpi-fields label{font-size:8.5px;color:var(--muted)}.kpi-fields .input{width:100%;margin-top:4px}
+.kpi-foot{display:flex;justify-content:space-between;align-items:center;margin-top:9px;padding-top:8px;border-top:1px solid #f0f1f5;font-size:8.5px;color:var(--muted)}
+.initiative-grid{display:grid;grid-template-columns:repeat(3,minmax(240px,1fr));gap:10px}.initiative{padding:13px}.initiative h4{font-size:10.5px;margin:0 0 6px;line-height:1.6}.initiative p{font-size:9px;color:var(--muted);line-height:1.7;margin:0}.tag{display:inline-block;margin-top:8px;background:#f0efff;color:var(--purple);padding:4px 7px;border-radius:7px;font-size:8px;font-weight:800}
+.check-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:12px}.form-card,.panel{padding:15px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.field{display:grid;gap:4px;font-size:9px;color:var(--muted)}.field.full{grid-column:1/-1}.textarea{min-height:72px;resize:vertical}
+.range-wrap{display:flex;gap:8px;align-items:center}.range-wrap input{width:100%;accent-color:var(--purple)}.range-value{min-width:42px;font-weight:900;color:var(--purple)}
+.save-row{display:flex;align-items:center;gap:10px;margin-top:10px}.saved{font-size:9px;color:var(--green);opacity:0}.saved.show{opacity:1}
+.timeline{display:grid;gap:7px;margin-top:10px}.checkitem{border:1px solid var(--line);border-radius:9px;padding:9px}.checkitem strong{font-size:9.5px}.check-meta{display:flex;gap:8px;flex-wrap:wrap;font-size:8px;color:var(--muted);margin-top:6px}.note-line{font-size:8.5px;color:#596170;margin-top:5px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{padding:13px}.stat strong{font-size:24px;display:block}.stat span{font-size:9px;color:var(--muted)}
+.dash-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:12px;margin-top:12px}.exec-row{padding:9px 0;border-bottom:1px solid #f0f1f5}.exec-head{display:flex;justify-content:space-between;gap:10px;font-size:8.8px;margin-bottom:6px}.risk{border:1px solid #f0d9d9;background:#fffafa;border-radius:9px;padding:9px;margin-bottom:7px}.risk strong{font-size:9px}.risk p{font-size:8.5px;color:#6b5d5d;margin:6px 0 0}
+.empty{padding:24px;text-align:center;color:var(--muted);font-size:10px}
+.bottom-nav{display:none}
+.mobile-top{display:none}
+@media(max-width:980px){
+ .app{grid-template-columns:1fr}.sidebar{display:none}.mobile-top{display:flex}
+ .topbar{padding:0 14px}.content{padding:14px 12px 86px}
+ .obj-top{grid-template-columns:minmax(0,1fr) 80px}.obj-top>div:nth-child(3),.obj-top>div:nth-child(4){display:none}
+ .kpi-grid,.initiative-grid{grid-template-columns:1fr 1fr}.check-layout,.dash-grid{grid-template-columns:1fr}
+ .stats{grid-template-columns:1fr 1fr}.bottom-nav{display:grid;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);grid-template-columns:repeat(5,1fr);z-index:30;padding:5px 6px env(safe-area-inset-bottom)}
+ .bottom-nav button{border:0;background:transparent;padding:7px 3px;color:#6b7280;font-size:8px;font-weight:800}.bottom-nav button.active{color:var(--purple)}
+ .top-actions .ghost{display:none}
+}
+@media(max-width:620px){
+ .kpi-grid,.initiative-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.input.search{min-width:100%}.toolbar{align-items:stretch}.toolbar>*{width:100%}
+ .view-tabs{width:100%;overflow:auto}.view-tabs button{flex:1}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brandmark">K</div><div><h1>اجرای راهبرد<br>بنادر و فرودگاه‌های کیش</h1><small>Perdoo-inspired · Strategy Execution</small></div></div>
+  <div class="nav" id="desktopNav">
+    <button class="active" data-page="explore"><span class="ico">◫</span><span>Explore</span></button>
+    <button data-page="kpis"><span class="ico">◉</span><span>Health KPIs</span></button>
+    <button data-page="initiatives"><span class="ico">◆</span><span>Initiatives</span></button>
+    <button data-page="checkin"><span class="ico">✓</span><span>Check-in</span></button>
+    <button data-page="dashboard"><span class="ico">▥</span><span>Executive Dashboard</span></button>
+  </div>
+  <div class="side-meta">مبنای محتوا: سند راهبردی تحول و پیشرفت شرکت<br>افق استقرار: ۱۴۰۴–۱۴۰۶<br><br>داده‌های اجرایی ثبت‌شده در این Pilot روی همین مرورگر ذخیره می‌شوند.</div>
+</aside>
+<main class="main">
+<header class="topbar">
+  <div><h2 id="pageTitle">Explore</h2><div class="top-sub">Strategy → Goals → Execution</div></div>
+  <div class="top-actions"><button class="btn ghost" onclick="exportData()">خروجی داده</button><button class="btn primary" onclick="go('checkin')">+ ثبت Check-in</button></div>
+</header>
+<div class="content">
+<section class="page active" id="explore">
+  <div class="notice"><b>نسخه عملیاتی آزمایشی:</b> ساختار راهبرد، ۶ ستون، ۱۸ Health KPI، ۱۳ Objective و Key Resultها از سند شرکت وارد شده‌اند. «پیشرفت واقعی» فقط پس از ثبت Check-in نمایش داده می‌شود و هیچ عدد عملکردی جعل نشده است.</div>
+  <div class="view-tabs" id="exploreTabs"><button class="active" data-view="map">Map</button><button data-view="cascade">Cascade</button><button data-view="board">Board</button></div>
+
+  <div id="mapView">
+    <div class="map-shell">
+      <div class="ultimate"><div class="eyebrow">ULTIMATE GOAL · NORTH STAR</div><h3>تبدیل‌شدن به سازمانی پیشرو، ایمن و نوآور در مدیریت حمل‌ونقل هوایی و دریایی که به‌عنوان دروازه بین‌المللی جزیره کیش، الگویی برای توسعه پایدار، سرمایه‌گذاری راهبردی و ارتقاء برند ملی و منطقه‌ای ایران باشد.</h3></div>
+      <div class="pillars-line" id="pillarsLine"></div>
+    </div>
+  </div>
+
+  <div id="cascadeView" style="display:none">
+    <div class="toolbar"><input class="input search" id="searchObj" placeholder="جست‌وجو در هدف یا KR..."><select class="select" id="filterPillar"><option value="">همه ستون‌ها</option></select></div>
+    <div class="cascade" id="cascade"></div>
+  </div>
+
+  <div id="boardView" style="display:none"><div class="board" id="board"></div></div>
+</section>
+
+<section class="page" id="kpis">
+  <div class="section-head"><div><h3>Health KPIs</h3><p>۱۸ شاخص سلامت برای پایش مستمر شش Strategic Pillar</p></div></div>
+  <div class="notice">KPIها در منطق Perdoo «سلامت جاری» را می‌سنجند و با KRها تفاوت دارند. مقدار فعلی و Target را با داده واقعی شرکت وارد کنید.</div>
+  <div class="kpi-grid" id="kpiGrid"></div>
+</section>
+
+<section class="page" id="initiatives">
+  <div class="section-head"><div><h3>بانک Initiatives</h3><p>نمونه‌های اجرایی منتخب از بانک ابتکارهای عملیاتی سند</p></div></div>
+  <div class="initiative-grid" id="initiativeGrid"></div>
+</section>
+
+<section class="page" id="checkin">
+  <div class="section-head"><div><h3>Check-in</h3><p>به‌روزرسانی کوتاه، منظم و مدیریتی: Progress + Confidence + Blocker + Next step</p></div></div>
+  <div class="check-layout">
+    <div class="card form-card">
+      <div class="form-grid">
+        <label class="field">نوع مورد<select class="select" id="checkType"><option value="objective">Objective</option><option value="kr">Key Result</option></select></label>
+        <label class="field">هدف / نتیجه<select class="select" id="checkGoal"></select></label>
+        <label class="field full">پیشرفت<div class="range-wrap"><input type="range" min="0" max="100" value="0" id="checkProgress"><span class="range-value" id="rangeValue">۰٪</span></div></label>
+        <label class="field">Confidence<select class="select" id="checkConfidence"><option value="on-track">On track · در مسیر</option><option value="at-risk">Needs attention · نیازمند توجه</option><option value="off-track">Off track · خارج از مسیر</option></select></label>
+        <label class="field">Owner<input class="input" id="checkOwner" placeholder="مسئول"></label>
+        <label class="field full">دستاورد این دوره<textarea class="textarea" id="checkWin" placeholder="یک دستاورد مشخص و کوتاه"></textarea></label>
+        <label class="field full">Blocker<textarea class="textarea" id="checkBlocker" placeholder="مهم‌ترین مانع؛ در صورت نبودن خالی بگذارید"></textarea></label>
+        <label class="field full">Next step<textarea class="textarea" id="checkNext" placeholder="گام بعدی مشخص"></textarea></label>
+      </div>
+      <div class="save-row"><button class="btn primary" onclick="saveCheckin()">ثبت به‌روزرسانی</button><span class="saved" id="savedMsg">✓ ذخیره شد</span></div>
+    </div>
+    <div class="card panel"><b>آخرین Check-inها</b><div class="timeline" id="timeline"></div></div>
+  </div>
+</section>
+
+<section class="page" id="dashboard">
+  <div class="section-head"><div><h3>Executive Dashboard</h3><p>تمرکز بر پوشش به‌روزرسانی، ریسک‌ها و موارد نیازمند تصمیم</p></div></div>
+  <div class="stats">
+    <div class="card stat"><strong>۱۳</strong><span>Strategic Objectives</span></div>
+    <div class="card stat"><strong>۱۸</strong><span>Health KPIs</span></div>
+    <div class="card stat"><strong id="statUpdated">۰</strong><span>اهداف دارای داده</span></div>
+    <div class="card stat"><strong id="statRisk">۰</strong><span>نیازمند توجه / خارج از مسیر</span></div>
+  </div>
+  <div class="dash-grid">
+    <div class="card panel"><b>Executive Progress</b><div id="execProgress"></div></div>
+    <div class="card panel"><b>Management Attention</b><div id="riskList" style="margin-top:10px"></div></div>
+  </div>
+</section>
+</div>
+</main>
+</div>
+
+<nav class="bottom-nav" id="mobileNav">
+  <button class="active" data-page="explore">Explore</button><button data-page="kpis">KPI</button><button data-page="initiatives">Initiative</button><button data-page="checkin">Check-in</button><button data-page="dashboard">Dashboard</button>
+</nav>
+
+<script>
+const PILLARS=[
+{id:1,fa:'ایمنی و کیفیت',en:'Safety & Quality',color:'#e85858',desc:'ارتقاء مستمر استانداردهای ایمنی، کیفیت خدمات و انطباق با مقررات بین‌المللی.',kpis:['Accident Rate','RFFS Response Time','Compliance Rate']},
+{id:2,fa:'بهره‌وری و مدیریت هزینه',en:'Efficiency & Cost Optimization',color:'#d28d28',desc:'بهبود فرآیندها، کاهش هزینه‌های عملیاتی و افزایش بهره‌وری منابع انسانی و تجهیزاتی.',kpis:['Operational Productivity','Unit Cost per Operation','Resource Utilization Efficiency']},
+{id:3,fa:'نوآوری و هوشمندسازی',en:'Innovation & Digitalization',color:'#5b82e8',desc:'توسعه خدمات نوآورانه، فناوری‌های دیجیتال و هوشمندسازی عملیات بندری و فرودگاهی.',kpis:['Digitalization Rate','Passenger Digital Service Usage','Service Time Reduction']},
+{id:4,fa:'سرمایه‌گذاری و توسعه پایدار',en:'Investment & Sustainability',color:'#29a66f',desc:'جذب سرمایه‌گذاری راهبردی، مشارکت عمومی–خصوصی و حرکت به سمت درآمدهای پایدار و متنوع.',kpis:['Infrastructure Investment Volume','PPP Share','Non-Aeronautical & Non-Port Revenues Share']},
+{id:5,fa:'سرمایه انسانی و فرهنگ سازمانی',en:'Human Capital & Culture',color:'#9a67d3',desc:'ارتقاء شایستگی‌های حرفه‌ای، اخلاق، شایسته‌سالاری و یادگیری مستمر.',kpis:['Training Hours per Employee','Employee Retention Rate','Employee Engagement Score']},
+{id:6,fa:'جایگاه و برند ملی/منطقه‌ای',en:'Positioning & Branding',color:'#536071',desc:'تقویت اعتبار شرکت در سطح ملی و منطقه‌ای و ایفای نقش به‌عنوان سازمان پیشرو حمل‌ونقل و لجستیک.',kpis:['Customer Satisfaction Index','Net Promoter Score','Brand Reputation Index']}
+];
+
+const OBJECTIVES=[
+{id:1,pillar:1,title:'ارتقاء مستمر کیفیت و ایمنی خدمات حمل‌ونقل هوایی و دریایی',krs:['Accident Rate (per million departures)','Rescue & Fire Fighting Service (RFFS) Response Time','Safety/Quality Findings On-Time Closure Rate','ISO Certification Coverage']},
+{id:2,pillar:2,title:'افزایش بهره‌وری و بهینه‌سازی هزینه‌ها در فرآیندهای سازمانی',krs:['Operational Productivity','Unit Cost per Operation','Lean Process Optimization','Resource Utilization Efficiency']},
+{id:3,pillar:3,title:'توسعه خدمات نوآورانه و هوشمندسازی عملیات کلیدی',krs:['Digitalization Rate','Digital Service Usage','Service Time Reduction','Digital Satisfaction Index']},
+{id:4,pillar:4,title:'تقویت مدل‌های پایدار درآمدزایی و کاهش وابستگی به منابع سنتی',krs:['Non-Aeronautical & Non-Port Revenue Share','Public–Private Partnership Investment','Revenue Source Diversification Index','Commercial Revenue per Square Meter']},
+{id:5,pillar:4,title:'جذب و هدایت سرمایه‌گذاری‌های راهبردی در پروژه‌های زیرساختی',krs:['Infrastructure Investment Volume','Public-Private Partnerships (PPP) Share','Investment Source Diversification Index','Project Kick-off Time']},
+{id:6,pillar:6,title:'حفظ و تقویت جایگاه شرکت در سطح ملی و ارتقاء اعتبار منطقه‌ای',krs:['Airport/Port Global Ranking Position','Stakeholder Satisfaction Index','Positive Media Coverage Index (%)','International Awards & Certifications Index']},
+{id:7,pillar:6,title:'ارتقاء تجربه ذی‌نفعان و ایفای نقش در توسعه برند ملی جزیره کیش',krs:['Customer Satisfaction Index (CSI)','Net Promoter Score (NPS)','Reputation / Brand Index','Positive Media Coverage Share']},
+{id:8,pillar:6,title:'افزایش تعاملات راهبردی با نهادهای کلیدی داخلی و بین‌المللی',krs:['Active Strategic Agreements Count','Active Joint Projects','Participation in International Bodies Index','Strategic Partner Satisfaction Index']},
+{id:9,pillar:5,title:'نهادینه‌سازی فرهنگ سازمانی مبتنی بر اخلاق، پاسخگویی و حرفه‌ای‌گرایی',krs:['Values Alignment Index','Continuous Learning Hours per Employee','Merit-based Promotion Rate','Employee Engagement Score']},
+{id:10,pillar:3,title:'توسعه زیرساخت‌های داده‌محور برای تصمیم‌سازی و پایش عملکرد',krs:['Analytics Maturity Index (AMI)','Data-Driven Decision Rate (DDDR)','Critical Data Availability Time (CDAT)','Organizational Transparency Index (OTI)']},
+{id:11,pillar:4,title:'پایش و ارتقاء اثرپذیری اجتماعی و زیست‌محیطی فعالیت‌های شرکت',krs:['CO₂ Emissions per Passenger / per TEU','Energy Intensity per Operation','Renewable Energy Share (%)','CSR Index']},
+{id:12,pillar:4,title:'افزایش تاب‌آوری سازمانی در برابر تحولات محیطی، اقتصادی و فناورانه',krs:['Organizational Resilience Index','Mean Time to Recovery (MTTR)','Supply Chain Resilience Index (SCRI)','Innovation in Resilience Index (IRI)']},
+{id:13,pillar:5,title:'توسعه سرمایه انسانی با تأکید بر توانمندسازی تخصصی، ارتقاء دانش فنی و تقویت شایستگی‌های رفتاری',krs:['Training Hours per Employee','Professional Certification Rate','Employee Engagement Index','Succession Planning Coverage','Employee Wellbeing Index']}
+];
+
+const INITIATIVES=[
+{title:'استقرار سامانه دیجیتال هماهنگی پرواز',goal:3,unit:'فرودگاه · عملیات هوانوردی'},
+{title:'ایجاد سیستم مدیریت پروژه دیجیتال برای پروژه‌های فنی',goal:10,unit:'فرودگاه · فنی و پشتیبانی'},
+{title:'طراحی نظام زمان‌بندی مرحله‌ای برای پروژه‌های اسکله‌ها',goal:5,unit:'بنادر · عملیات دریانوردی'},
+{title:'اجرای فرآیند یکپارچه تدارکات بندری',goal:2,unit:'بنادر · فنی و پشتیبانی'},
+{title:'طراحی نظام ارزیابی بهره‌وری زمانی پروژه‌ها',goal:2,unit:'مالی و اداری'},
+{title:'استقرار داشبورد مالی هوشمند برای پایش تخصیص منابع',goal:10,unit:'مالی'},
+{title:'طراحی نظام برنامه‌ریزی پیش‌دستانه عملیات',goal:2,unit:'عملیات'},
+{title:'استقرار سامانه پایش آنلاین پیشرفت پروژه‌های بندری',goal:10,unit:'بنادر'},
+{title:'ایجاد نظام ارزیابی پیمانکاران برای تسریع پروژه‌ها',goal:5,unit:'پروژه و پیمانکاران'},
+{title:'برگزاری دوره‌های آموزشی مدیریت زمان پروژه‌ها برای مدیران',goal:13,unit:'منابع انسانی'},
+{title:'ایجاد فرآیند تأمین مالی سریع پروژه‌ها',goal:5,unit:'مالی'}
+];
+
+const lowerBetter=new Set(['Accident Rate','RFFS Response Time','Unit Cost per Operation','CO₂ Emissions per Passenger / per TEU','Energy Intensity per Operation','Critical Data Availability Time (CDAT)','Mean Time to Recovery (MTTR)','Project Kick-off Time']);
+
+const memoryStore={};
+const store={
+ get(k,fallback){try{const v=localStorage.getItem(k);return v===null?fallback:v}catch(e){return Object.prototype.hasOwnProperty.call(memoryStore,k)?memoryStore[k]:fallback}},
+ set(k,v){try{localStorage.setItem(k,v)}catch(e){memoryStore[k]=v}}
+};
+let checks=JSON.parse(store.get('kish-v3-checks','[]'));
+let kpiData=JSON.parse(store.get('kish-v3-kpis','{}'));
+let owners=JSON.parse(store.get('kish-v3-owners','{}'));
+
+const fa=n=>Number(n).toLocaleString('fa-IR');
+const pBy=id=>PILLARS.find(x=>x.id===id);
+const oBy=id=>OBJECTIVES.find(x=>x.id===id);
+const keyObj=id=>`obj-${id}`;
+const keyKr=(id,i)=>`kr-${id}-${i}`;
+
+function persist(){store.set('kish-v3-checks',JSON.stringify(checks));store.set('kish-v3-kpis',JSON.stringify(kpiData));store.set('kish-v3-owners',JSON.stringify(owners));}
+function latest(key){return checks.filter(x=>x.key===key).sort((a,b)=>b.ts-a.ts)[0]||null}
+function objState(id){
+ const o=oBy(id), direct=latest(keyObj(id)), k=o.krs.map((_,i)=>latest(keyKr(id,i))).filter(Boolean);
+ if(!k.length) return direct;
+ const progress=Math.round(k.reduce((s,x)=>s+Number(x.progress||0),0)/k.length);
+ const confidence=k.some(x=>x.confidence==='off-track')?'off-track':k.some(x=>x.confidence==='at-risk')?'at-risk':'on-track';
+ const recent=[...k].sort((a,b)=>b.ts-a.ts)[0];
+ if(direct && direct.ts>recent.ts) return direct;
+ return {...recent,progress,confidence,coverage:k.length,total:o.krs.length,derived:true}
+}
+function status(s){if(!s)return{label:'بدون به‌روزرسانی',cls:'',col:'none'};if(s.confidence==='on-track')return{label:'در مسیر',cls:'ok',col:'on'};if(s.confidence==='at-risk')return{label:'نیازمند توجه',cls:'warn',col:'risk'};return{label:'خارج از مسیر',cls:'bad',col:'off'}}
+function pct(s){return s?Number(s.progress||0):0}
+function esc(s){return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;')}
+
+function renderMap(){
+ document.getElementById('pillarsLine').innerHTML=PILLARS.map(p=>{
+   const os=OBJECTIVES.filter(o=>o.pillar===p.id);
+   return `<article class="card pillar-card" style="--pcolor:${p.color}">
+    <div class="pillar-title"><div class="pillar-no">${fa(p.id)}</div><div><h4>${p.fa}</h4><span class="en">${p.en}</span></div></div>
+    <div class="pillar-desc">${p.desc}</div>
+    <div class="kpi-mini">${p.kpis.map(k=>`<div><i></i><span class="en">${k}</span></div>`).join('')}</div>
+    <div class="obj-chips">${os.map(o=>`<button class="obj-chip" onclick="openObjective(${o.id})">O${o.id}</button>`).join('')}</div>
+   </article>`
+ }).join('')
+}
+function renderFilter(){
+ const s=document.getElementById('filterPillar');
+ s.innerHTML='<option value="">همه ستون‌ها</option>'+PILLARS.map(p=>`<option value="${p.id}">${p.fa}</option>`).join('')
+}
+function renderCascade(){
+ const q=(document.getElementById('searchObj').value||'').toLowerCase().trim(), pf=document.getElementById('filterPillar').value;
+ const groups=PILLARS.filter(p=>!pf||String(p.id)===pf).map(p=>{
+   const os=OBJECTIVES.filter(o=>o.pillar===p.id && (!q || o.title.toLowerCase().includes(q) || o.krs.some(k=>k.toLowerCase().includes(q))));
+   if(!os.length)return'';
+   return `<section class="card group"><div class="group-head"><div><strong>${p.fa}</strong><br><small class="en">${p.en}</small></div><small>${fa(os.length)} Objective</small></div>${os.map(renderObj).join('')}</section>`
+ }).join('');
+ document.getElementById('cascade').innerHTML=groups||'<div class="empty">موردی پیدا نشد.</div>'
+}
+function renderObj(o){
+ const s=objState(o.id), st=status(s), pr=pct(s), cov=s?.coverage??0;
+ return `<div class="obj-row" id="objective-${o.id}">
+   <div class="obj-top">
+    <div class="obj-name"><span class="oid">O${o.id}</span><div><h4>${o.title}</h4><div class="meta">${pBy(o.pillar).fa} · ${s?.derived?`${fa(cov)} از ${fa(o.krs.length)} KR به‌روز`:'Company Objective'}</div></div></div>
+    <div><div class="progress"><span style="width:${pr}%"></span></div><div class="meta" style="margin-top:4px">${s?fa(pr)+'٪':'—'}</div></div>
+    <div class="status"><i class="dot ${st.cls}"></i>${st.label}</div>
+    <button class="toggle-krs" onclick="toggleKrs(${o.id})">KRها ▾</button>
+   </div>
+   <div class="krs" id="krs-${o.id}">${o.krs.map((k,i)=>renderKr(o,i,k)).join('')}</div>
+  </div>`
+}
+function renderKr(o,i,k){
+ const s=latest(keyKr(o.id,i)), st=status(s), pr=pct(s);
+ return `<div class="kr"><strong>KR${i+1}</strong><div class="kr-name en">${k}</div><div><div class="progress"><span style="width:${pr}%"></span></div><div class="meta">${s?fa(pr)+'٪':'—'}</div></div><div class="status"><i class="dot ${st.cls}"></i>${st.label}</div></div>`
+}
+function toggleKrs(id){document.getElementById(`krs-${id}`).classList.toggle('show')}
+function openObjective(id){
+ setExplore('cascade'); document.getElementById('filterPillar').value=String(oBy(id).pillar); renderCascade();
+ setTimeout(()=>{const el=document.getElementById(`objective-${id}`); if(el){el.scrollIntoView({behavior:'smooth',block:'center'}); document.getElementById(`krs-${id}`).classList.add('show')}},80)
+}
+function renderBoard(){
+ const cols=[
+  ['on','در مسیر','ok'],['risk','نیازمند توجه','warn'],['off','خارج از مسیر','bad'],['none','بدون به‌روزرسانی','']
+ ];
+ document.getElementById('board').innerHTML=cols.map(([key,label,cls])=>{
+   const arr=OBJECTIVES.filter(o=>status(objState(o.id)).col===key);
+   return `<section class="board-col"><div class="board-head"><span><i class="dot ${cls}"></i> ${label}</span><span class="count">${fa(arr.length)}</span></div>${arr.map(o=>{const s=objState(o.id);return `<article class="board-card"><h4>O${o.id} — ${o.title}</h4><div class="foot"><span>${pBy(o.pillar).fa}</span><span>${s?fa(pct(s))+'٪':'—'}</span></div></article>`}).join('')||'<div class="empty">موردی نیست</div>'}</section>`
+ }).join('')
+}
+function setExplore(v){
+ document.querySelectorAll('#exploreTabs button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));
+ document.getElementById('mapView').style.display=v==='map'?'block':'none';
+ document.getElementById('cascadeView').style.display=v==='cascade'?'block':'none';
+ document.getElementById('boardView').style.display=v==='board'?'block':'none';
+ if(v==='cascade')renderCascade(); if(v==='board')renderBoard()
+}
+function renderKPIs(){
+ document.getElementById('kpiGrid').innerHTML=PILLARS.flatMap(p=>p.kpis.map(k=>{
+   const key=`${p.id}::${k}`,d=kpiData[key]||{};
+   const stat=kpiStatus(k,d.current,d.target);
+   return `<article class="card kpi-card"><h4><span class="en">${k}</span></h4><div class="pname">${p.fa}</div><div class="kpi-fields"><label>Actual<input class="input" inputmode="decimal" value="${esc(d.current??'')}" onchange="saveKpi('${key}','current',this.value)" placeholder="—"></label><label>Target<input class="input" inputmode="decimal" value="${esc(d.target??'')}" onchange="saveKpi('${key}','target',this.value)" placeholder="—"></label></div><div class="kpi-foot"><span class="status"><i class="dot ${stat.cls}"></i>${stat.label}</span><span>${stat.direction}</span></div></article>`
+ })).join('')
+}
+function kpiStatus(name,cur,tgt){
+ const a=parseFloat(cur),b=parseFloat(tgt), low=lowerBetter.has(name);
+ if(Number.isNaN(a)||Number.isNaN(b))return{label:'بدون داده',cls:'',direction:low?'کمتر بهتر':'بیشتر بهتر'};
+ if(low){return a<=b?{label:'مطلوب',cls:'ok',direction:'کمتر بهتر'}:a<=b*1.15?{label:'نیازمند توجه',cls:'warn',direction:'کمتر بهتر'}:{label:'نامطلوب',cls:'bad',direction:'کمتر بهتر'}}
+ return a>=b?{label:'مطلوب',cls:'ok',direction:'بیشتر بهتر'}:a>=b*.85?{label:'نیازمند توجه',cls:'warn',direction:'بیشتر بهتر'}:{label:'نامطلوب',cls:'bad',direction:'بیشتر بهتر'}
+}
+function saveKpi(key,f,v){kpiData[key]=kpiData[key]||{};kpiData[key][f]=v;persist();renderKPIs()}
+function renderInitiatives(){document.getElementById('initiativeGrid').innerHTML=INITIATIVES.map(x=>`<article class="card initiative"><h4>${x.title}</h4><p>هم‌راستا با O${x.goal}: ${oBy(x.goal).title}</p><span class="tag">${x.unit}</span></article>`).join('')}
+function renderCheckSelect(){
+ const type=document.getElementById('checkType').value, s=document.getElementById('checkGoal');
+ s.innerHTML=type==='objective'?OBJECTIVES.map(o=>`<option value="${keyObj(o.id)}">O${o.id} — ${o.title}</option>`).join(''):OBJECTIVES.flatMap(o=>o.krs.map((k,i)=>`<option value="${keyKr(o.id,i)}">O${o.id} · KR${i+1} — ${k}</option>`)).join('');
+ document.getElementById('checkOwner').value=owners[s.value]||''
+}
+function saveCheckin(){
+ const key=document.getElementById('checkGoal').value,owner=document.getElementById('checkOwner').value.trim();
+ if(owner)owners[key]=owner;
+ checks.unshift({key,progress:Number(document.getElementById('checkProgress').value),confidence:document.getElementById('checkConfidence').value,owner:owner||owners[key]||'',win:document.getElementById('checkWin').value.trim(),blocker:document.getElementById('checkBlocker').value.trim(),next:document.getElementById('checkNext').value.trim(),ts:Date.now()});
+ persist(); ['checkWin','checkBlocker','checkNext'].forEach(id=>document.getElementById(id).value='');
+ document.getElementById('savedMsg').classList.add('show'); setTimeout(()=>document.getElementById('savedMsg').classList.remove('show'),1400);
+ renderDynamic()
+}
+function labelForKey(k){
+ if(k.startsWith('obj-')){const id=+k.split('-')[1];return`O${id} — ${oBy(id).title}`}
+ const [_,oid,idx]=k.split('-');return`O${oid} · KR${Number(idx)+1} — ${oBy(+oid).krs[+idx]}`
+}
+function renderTimeline(){
+ const el=document.getElementById('timeline');
+ el.innerHTML=checks.length?checks.slice(0,9).map(c=>`<article class="checkitem"><strong>${labelForKey(c.key)}</strong><div class="check-meta"><span>${new Date(c.ts).toLocaleString('fa-IR')}</span><span>${fa(c.progress)}٪</span><span class="status"><i class="dot ${status(c).cls}"></i>${status(c).label}</span>${c.owner?`<span>Owner: ${esc(c.owner)}</span>`:''}</div>${c.blocker?`<div class="note-line">⚠ ${esc(c.blocker)}</div>`:''}${c.next?`<div class="note-line">← ${esc(c.next)}</div>`:''}</article>`).join(''):'<div class="empty">هنوز Check-in ثبت نشده است.</div>'
+}
+function renderDashboard(){
+ const states=OBJECTIVES.map(o=>({o,s:objState(o.id)})).filter(x=>x.s), risks=states.filter(x=>x.s.confidence!=='on-track');
+ document.getElementById('statUpdated').textContent=fa(states.length);document.getElementById('statRisk').textContent=fa(risks.length);
+ document.getElementById('execProgress').innerHTML=states.length?states.map(({o,s})=>`<div class="exec-row"><div class="exec-head"><span>O${o.id} — ${o.title}</span><span>${fa(pct(s))}٪</span></div><div class="progress"><span style="width:${pct(s)}%;background:${status(s).cls==='ok'?'var(--green)':status(s).cls==='warn'?'var(--amber)':'var(--red)'}"></span></div></div>`).join(''):'<div class="empty">برای ساخت تصویر اجرایی، Check-in ثبت کنید.</div>';
+ document.getElementById('riskList').innerHTML=risks.length?risks.map(({o,s})=>`<article class="risk"><strong>O${o.id} — ${o.title}</strong><div class="status" style="margin-top:6px"><i class="dot ${status(s).cls}"></i>${status(s).label}</div><p>${s.blocker?'مانع: '+esc(s.blocker):'مانع مشخصی ثبت نشده است.'}</p></article>`).join(''):'<div class="empty">مورد نیازمند توجه ثبت نشده است.</div>'
+}
+function renderDynamic(){renderCascade();renderBoard();renderKPIs();renderTimeline();renderDashboard()}
+const titles={explore:'Explore',kpis:'Health KPIs',initiatives:'Initiatives',checkin:'Check-in',dashboard:'Executive Dashboard'};
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('pageTitle').textContent=titles[id];if(id==='kpis')renderKPIs();if(id==='initiatives')renderInitiatives();if(id==='checkin')renderTimeline();if(id==='dashboard')renderDashboard();window.scrollTo({top:0,behavior:'smooth'})}
+function exportData(){
+ const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),checks,kpiData,owners},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kish-strategy-execution-data.json';a.click();URL.revokeObjectURL(a.href)
+}
+
+document.getElementById('desktopNav').addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b)go(b.dataset.page)});
+document.getElementById('mobileNav').addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b)go(b.dataset.page)});
+document.getElementById('exploreTabs').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(b)setExplore(b.dataset.view)});
+document.getElementById('searchObj').addEventListener('input',renderCascade);
+document.getElementById('filterPillar').addEventListener('change',renderCascade);
+document.getElementById('checkType').addEventListener('change',renderCheckSelect);
+document.getElementById('checkGoal').addEventListener('change',e=>document.getElementById('checkOwner').value=owners[e.target.value]||'');
+document.getElementById('checkProgress').addEventListener('input',e=>document.getElementById('rangeValue').textContent=fa(e.target.value)+'٪');
+
+renderMap();renderFilter();renderCheckSelect();renderInitiatives();renderDynamic();
+</script>
+</body>
+</html>
