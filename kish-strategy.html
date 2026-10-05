@@ -50,6 +50,33 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
 .bottom-nav{display:none}
 @media(max-width:1020px){.app{grid-template-columns:1fr}.sidebar{display:none}.topbar{padding:0 14px}.content{padding:14px 12px 86px}.hero{grid-template-columns:1fr;min-height:0;padding:22px 18px}.hero-visual{height:160px}.radar{width:150px;height:150px}.hero h3{font-size:21px}.quickstats{grid-template-columns:1fr 1fr}.vitals-grid{grid-template-columns:1fr 1fr}.attention,.check-layout,.dash-grid{grid-template-columns:1fr}.obj-top{grid-template-columns:minmax(0,1fr) 80px}.obj-top>div:nth-child(3),.obj-top>button{display:none}.kpi-grid,.initiative-grid{grid-template-columns:1fr 1fr}.bottom-nav{display:grid;position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);grid-template-columns:repeat(5,1fr);z-index:40;padding:5px 5px env(safe-area-inset-bottom)}.bottom-nav button{border:0;background:transparent;color:#778091;padding:7px 2px;font-size:8px;font-weight:800}.bottom-nav button.active{color:var(--navy)}.top-actions .hide-mobile{display:none}}
 @media(max-width:650px){.hero h3{font-size:19px}.vitals-grid,.kpi-grid,.initiative-grid,.edu{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.toolbar>*{width:100%}.input.search{min-width:100%}.view-tabs{width:100%;overflow:auto}.view-tabs button{flex:1}.quickstats{gap:8px}.stat .k{font-size:23px}}
+
+/* ===== WORKSHOP MODE ===== */
+.workshop-entry{margin-top:14px;background:linear-gradient(135deg,#eef6ff,#f8f5ff);border:1px solid #dfe7f5;border-radius:18px;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.workshop-entry h4{margin:0 0 5px;font-size:13px}.workshop-entry p{margin:0;color:var(--muted);font-size:9.5px;line-height:1.8}.workshop-entry .btn{white-space:nowrap}
+.ws-shell{display:grid;grid-template-columns:240px minmax(0,1fr);gap:14px;align-items:start}.ws-rail{position:sticky;top:88px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:0 4px 18px rgba(20,46,70,.04)}
+.ws-profile{background:linear-gradient(145deg,#0a3150,#12527c);color:#fff;border-radius:14px;padding:13px;margin-bottom:10px}.ws-profile small{display:block;color:#bcd7e7;font-size:8px;margin-bottom:5px}.ws-profile strong{display:block;font-size:11px;line-height:1.7}.ws-profile .mini{font-size:8px;color:#c8dce8;margin-top:4px}
+.ws-steps{display:grid;gap:5px}.ws-step{border:0;background:#f7f9fc;color:#657082;border-radius:10px;padding:9px 10px;text-align:right;font-size:9px;font-weight:800;display:flex;align-items:center;gap:8px}.ws-step.active{background:#eaf2ff;color:#265ec9}.ws-step.done{background:#ebf8f1;color:#21875d}.ws-step b{width:22px;height:22px;border-radius:50%;background:#fff;display:grid;place-items:center;border:1px solid #e5e9f0;font-size:8px;flex:0 0 auto}
+.ws-main{min-width:0}.ws-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px;margin-bottom:12px;box-shadow:0 3px 14px rgba(15,35,58,.035)}.ws-card h3{font-size:16px;margin:0 0 6px}.ws-card h4{font-size:11px;margin:0}.ws-card p{font-size:9.5px;color:var(--muted);line-height:1.9;margin:5px 0}
+.ws-hero{background:linear-gradient(130deg,#0a3150,#114e77 64%,#1679a9);color:#fff;border:0;padding:22px}.ws-hero h3{font-size:20px;line-height:1.7}.ws-hero p{color:#dcecf6;max-width:900px}
+.ws-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.ws-grid.two{grid-template-columns:1fr 1fr}.ws-foundation{border:1px solid var(--line);border-radius:14px;padding:13px;background:#fcfdff;position:relative}.ws-foundation .label{font-size:8px;font-weight:900;color:var(--blue);margin-bottom:5px}.ws-foundation h4{font-size:11px;margin:0 0 5px}.ws-foundation p{font-size:8.8px;line-height:1.9;margin:0;color:#677184}.ws-foundation .info-btn{position:absolute;left:10px;top:10px}
+.info-btn{border:0;background:#edf3ff;color:#376bcc;width:28px;height:28px;border-radius:9px;font-weight:900;display:inline-grid;place-items:center}.info-btn:hover{background:#dfeaff}
+.ws-form{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ws-form .full{grid-column:1/-1}.ws-field{display:grid;gap:5px;font-size:8.5px;color:#687385}.ws-field label{display:flex;align-items:center;gap:5px;font-weight:800;color:#505a69}.ws-field .input,.ws-field .select,.ws-field .textarea{width:100%}
+.ws-choice{display:flex;gap:7px;flex-wrap:wrap}.ws-choice button{border:1px solid var(--line);background:#fff;padding:9px 11px;border-radius:10px;font-size:9px;font-weight:800;color:#596476}.ws-choice button.active{border-color:#5f87ff;background:#eff4ff;color:#245ec9}
+.ws-callout{border:1px solid #dfe8f8;background:#f7faff;border-radius:13px;padding:12px;margin-top:10px}.ws-callout strong{font-size:9.5px}.ws-callout p{font-size:9px;margin:4px 0 0;color:#5d6b7e}.ws-callout.gold{background:#fffaf0;border-color:#f0e2b7}.ws-callout.green{background:#f1fbf6;border-color:#d6efdf}
+.ws-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.ws-pillar{border:1px solid var(--line);border-right:4px solid var(--pc);background:#fff;border-radius:13px;padding:12px;cursor:pointer;transition:.16s}.ws-pillar:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(15,35,58,.06)}.ws-pillar.active{box-shadow:0 0 0 2px color-mix(in srgb,var(--pc) 35%,white);background:color-mix(in srgb,var(--pc) 4%,white)}.ws-pillar h4{font-size:10px;margin:0 0 3px}.ws-pillar small{font-size:7.5px;color:var(--muted)}.ws-pillar p{font-size:8px;margin:6px 0 0;line-height:1.75}
+.ws-objective-preview{display:grid;grid-template-columns:54px minmax(0,1fr);gap:10px;align-items:start;background:#f8faff;border:1px solid #e2e8f4;border-radius:14px;padding:12px}.ws-objective-preview .oid{width:54px;height:54px;border-radius:14px;background:#183e63;color:white;display:grid;place-items:center;font-weight:900;font-size:15px}.ws-objective-preview h4{font-size:10.5px;line-height:1.7;margin:0}.ws-objective-preview p{font-size:8.5px;margin:4px 0 0}
+.okr-builder{border:1px solid #e1e6ef;border-radius:15px;overflow:hidden}.okr-head{background:#102f4d;color:#fff;padding:12px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px}.okr-head strong{font-size:10px}.okr-head span{font-size:8px;color:#c8d9e7}.okr-row{display:grid;grid-template-columns:92px minmax(0,1fr) 170px;gap:10px;align-items:center;padding:10px 12px;border-top:1px solid #eef1f5;background:#fff}.okr-row:first-of-type{border-top:0}.okr-type{font-size:8px;font-weight:900;color:#536172}.okr-row.objective{background:#fbfcfe}.okr-row .input{width:100%}.okr-progress{display:flex;align-items:center;gap:8px}.okr-progress input[type=range]{width:100%;accent-color:var(--blue)}.okr-progress strong{font-size:8px;min-width:34px;color:#2b65cf}
+.ws-score{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;align-items:center}.score-ring{width:110px;height:110px;border-radius:50%;background:conic-gradient(var(--green) calc(var(--score)*1%),#e9edf3 0);display:grid;place-items:center;position:relative}.score-ring:after{content:"";width:82px;height:82px;background:#fff;border-radius:50%;position:absolute}.score-ring strong{position:relative;z-index:2;font-size:24px}.score-ring span{position:absolute;z-index:2;top:66px;font-size:8px;color:var(--muted)}
+.ws-feedback{display:grid;gap:6px}.fb{border-radius:10px;padding:8px 10px;font-size:8.5px;line-height:1.7}.fb.ok{background:#edf9f3;color:#247a56}.fb.warn{background:#fff7e9;color:#916311}.fb.bad{background:#fff0f0;color:#a94c4c}
+.ws-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.ws-actions .btn{font-size:9px}
+.term-link{border:0;background:transparent;color:var(--blue);font-weight:900;padding:0;border-bottom:1px dashed #8daaf5}
+.modal-backdrop{position:fixed;inset:0;background:rgba(5,19,31,.55);z-index:100;display:none;align-items:center;justify-content:center;padding:18px}.modal-backdrop.show{display:flex}.glossary-modal{width:min(720px,100%);max-height:84vh;overflow:auto;background:#fff;border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,.25);padding:20px;position:relative}.modal-close{position:absolute;left:14px;top:14px;border:0;background:#f1f3f6;width:32px;height:32px;border-radius:10px;font-size:18px}.glossary-modal .eyebrow{font-size:8px;color:var(--blue);font-weight:900}.glossary-modal h3{font-size:18px;margin:5px 0 9px}.glossary-modal p{font-size:10px;line-height:2;color:#536074}.glossary-example{background:#f7f9fc;border:1px solid var(--line);border-radius:12px;padding:11px;margin-top:10px}.glossary-example b{font-size:9px}.glossary-example div{font-size:9px;color:#5e6878;line-height:1.8;margin-top:4px}
+.ws-hidden{display:none!important}.ws-mini-note{font-size:8px;color:#87909e;line-height:1.8;margin-top:6px}
+@media print{.sidebar,.topbar,.bottom-nav,.ws-rail,.no-print{display:none!important}.app{display:block}.content{padding:0}.page{display:none!important}#workshop.page{display:block!important}.ws-main{width:100%}.ws-card{break-inside:avoid;box-shadow:none}}
+@media(max-width:1020px){.ws-shell{grid-template-columns:1fr}.ws-rail{position:static}.ws-steps{grid-template-columns:repeat(3,1fr)}.ws-profile{margin-bottom:8px}.ws-grid,.ws-pillars{grid-template-columns:1fr 1fr}.bottom-nav{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:650px){.workshop-entry{display:block}.workshop-entry .btn{margin-top:10px;width:100%}.ws-steps{grid-template-columns:1fr 1fr}.ws-grid,.ws-grid.two,.ws-pillars,.ws-form{grid-template-columns:1fr}.ws-form .full{grid-column:auto}.okr-row{grid-template-columns:1fr}.okr-progress{margin-top:-4px}.ws-score{grid-template-columns:1fr;text-align:center}.score-ring{margin:auto}}
+
 </style>
 </head>
 <body>
@@ -69,6 +96,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
  <div class="brand"><div class="brandrow"><div class="brandmark"><svg><use href="#i-plane"/></svg></div><div><h1>اتاق فرمان اجرای راهبرد<br>بنادر و فرودگاه‌های کیش</h1><small>Executive Strategy Cockpit</small></div></div></div>
  <nav class="nav" id="desktopNav">
   <button class="active" data-page="home"><svg><use href="#i-home"/></svg><span>خانه مدیریتی</span></button>
+  <button data-page="workshop"><svg><use href="#i-target"/></svg><span>کارگاه تعاملی</span></button>
   <button data-page="strategy"><svg><use href="#i-map"/></svg><span>نقشه و اهداف راهبردی</span></button>
   <button data-page="kpis"><svg><use href="#i-heart"/></svg><span>علائم حیاتی سازمان</span></button>
   <button data-page="checkin"><svg><use href="#i-check"/></svg><span>ثبت پیشرفت</span></button>
@@ -84,6 +112,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
   <div><div class="eyebrow">EXECUTIVE STRATEGY COCKPIT</div><h3>از راهبرد تا اقدام؛ وضعیت شرکت را در یک نگاه ببینید.</h3><p>این سامانه، سند راهبردی شرکت را به یک تجربه مدیریتی ساده تبدیل می‌کند: مقصد نهایی، ۶ ستون راهبردی، ۱۳ هدف، ۱۸ شاخص سلامت، پیشرفت هفتگی و موارد نیازمند تصمیم.</p><div class="hero-actions"><button class="btn primary" onclick="go('strategy')">مشاهده نقشه راهبرد</button><button class="btn" onclick="go('kpis')">مشاهده علائم حیاتی</button></div></div>
   <div class="hero-visual"><div class="radar"><div class="radar-line"></div></div><svg class="plane"><use href="#i-plane"/></svg><span class="portdot d1"></span><span class="portdot d2"></span><span class="portdot d3"></span></div>
  </div>
+ <div class="workshop-entry"><div><h4>🎓 حالت کارگاه تعاملی</h4><p>بر اساس الگوی Excel/Perdoo: ابتدا حوزه خود را انتخاب کنید، مفاهیم را مرور کنید، Company OKR را به Team OKR ترجمه کنید و خروجی شخصی بگیرید.</p></div><button class="btn blue" onclick="go('workshop')">ورود به کارگاه</button></div>
  <div class="quickstats"><div class="stat"><div class="k">۶</div><div class="l">ستون راهبردی</div><div class="mini">Strategic Pillars</div></div><div class="stat"><div class="k">۱۳</div><div class="l">هدف راهبردی</div><div class="mini">Company Objectives</div></div><div class="stat"><div class="k">۱۸</div><div class="l">شاخص سلامت</div><div class="mini">Health KPIs</div></div><div class="stat"><div class="k" id="homeUpdated">۰</div><div class="l">هدف دارای داده</div><div class="mini">Updated objectives</div></div></div>
  <div class="section-head"><div><h3>KPI؛ علائم حیاتی سازمان</h3><p>مثل علائم حیاتی در کابین؛ به مدیر می‌گوید کدام بخش سالم است و کجا باید زودتر مداخله کند.</p></div><button class="btn" onclick="go('kpis')">همه KPIها</button></div>
  <div class="vitals-grid" id="vitalsGrid"></div>
@@ -107,13 +136,135 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
  <div class="section-head"><div><h3>ثبت پیشرفت هفتگی</h3><p>Check-in کوتاه: Progress + Confidence + Blocker + Next Step</p></div></div>
  <div class="check-layout"><div class="form-card"><div class="form-grid"><label class="field">نوع مورد<select class="select" id="checkType"><option value="objective">Objective</option><option value="kr">Key Result</option></select></label><label class="field">هدف / نتیجه<select class="select" id="checkGoal"></select></label><label class="field full">پیشرفت<div class="range-wrap"><input type="range" min="0" max="100" value="0" id="checkProgress"><span class="range-value" id="rangeValue">۰٪</span></div></label><label class="field">Confidence<select class="select" id="checkConfidence"><option value="on-track">در مسیر</option><option value="at-risk">نیازمند توجه</option><option value="off-track">خارج از مسیر</option></select></label><label class="field">Owner<input class="input" id="checkOwner" placeholder="مسئول"></label><label class="field full">دستاورد این دوره<textarea class="textarea" id="checkWin" placeholder="یک دستاورد مشخص و کوتاه"></textarea></label><label class="field full">Blocker<textarea class="textarea" id="checkBlocker" placeholder="مهم‌ترین مانع؛ اگر مانعی نیست خالی بگذارید"></textarea></label><label class="field full">Next step<textarea class="textarea" id="checkNext" placeholder="گام بعدی مشخص"></textarea></label></div><div class="save-row"><button class="btn blue" onclick="saveCheckin()">ثبت به‌روزرسانی</button><span class="saved" id="savedMsg">✓ ذخیره شد</span></div></div><div class="panel"><h4>آخرین Check-inها</h4><div class="timeline" id="timeline"></div></div></div>
 </section>
+
+<section class="page" id="workshop">
+ <div class="ws-shell">
+  <aside class="ws-rail">
+   <div class="ws-profile"><small>WORKSHOP PROFILE</small><strong id="wsProfileTitle">هنوز حوزه انتخاب نشده</strong><div class="mini" id="wsProfileSub">اطلاعات این کارگاه فقط روی همین دستگاه ذخیره می‌شود.</div></div>
+   <div class="ws-steps" id="wsSteps">
+    <button class="ws-step active" data-wstep="1"><b>۱</b> ورود و حوزه</button>
+    <button class="ws-step" data-wstep="2"><b>۲</b> مبانی راهبرد</button>
+    <button class="ws-step" data-wstep="3"><b>۳</b> Pillar و KPI</button>
+    <button class="ws-step" data-wstep="4"><b>۴</b> Company OKR</button>
+    <button class="ws-step" data-wstep="5"><b>۵</b> Team OKR</button>
+    <button class="ws-step" data-wstep="6"><b>۶</b> ارزیابی و خروجی</button>
+   </div>
+  </aside>
+  <div class="ws-main">
+   <div class="ws-card ws-hero">
+    <div class="eyebrow">INTERACTIVE STRATEGY EXECUTION WORKSHOP</div>
+    <h3>سند راهبردی را برای حوزه خودتان ترجمه کنید؛ نه اینکه فقط آن را بخوانید.</h3>
+    <p>این مسیر کارگاهی از منطق فایل Perdoo پیروی می‌کند: مبانی شرکت → Company OKRs → Team OKRs → Alignment → Key Results → Initiatives → Cadence و Check-in. هر اصطلاحی را فراموش کردید، روی ⓘ بزنید.</p>
+   </div>
+
+   <div class="ws-stage" data-stage="1">
+    <div class="ws-card">
+     <div class="section-head"><div><h3>۱. شما از کدام حوزه هستید؟</h3><p>تفسیر مثال‌ها و تمرین‌ها بر اساس حوزه انتخابی شما تغییر می‌کند.</p></div></div>
+     <div class="ws-form">
+      <div class="ws-field"><label>نام شما (اختیاری)</label><input class="input" id="wsName" placeholder="مثلاً حسن بودلایی"></div>
+      <div class="ws-field"><label>سمت / نقش (اختیاری)</label><input class="input" id="wsRole" placeholder="مثلاً مدیر عملیات"></div>
+      <div class="ws-field full"><label>حوزه اصلی</label>
+       <div class="ws-choice" id="wsDeptChoices">
+        <button data-dept="port">بندر</button><button data-dept="airport">فرودگاه</button><button data-dept="admin">معاونت مالی و اداری</button><button data-dept="economic">معاونت اقتصادی</button><button data-dept="ceo">حوزه مدیرعامل</button>
+       </div>
+      </div>
+      <div class="ws-field full"><label>دپارتمان / زیرواحد دقیق‌تر</label><input class="input" id="wsSubunit" placeholder="مثلاً عملیات بندری، ایمنی فرودگاه، منابع انسانی، مالی، سرمایه‌گذاری..."></div>
+     </div>
+     <div class="ws-callout" id="wsDeptMeaning"><strong>چرا این سؤال را می‌پرسیم؟</strong><p>هدف کارگاه، ترجمه راهبرد کلان به زبان هر حوزه است. وقتی حوزه را انتخاب کنید، مثال و تفسیر Pillarها و Objectiveها برای همان حوزه نمایش داده می‌شود.</p></div>
+     <div class="ws-actions"><button class="btn blue" onclick="saveWorkshopProfile();showWorkshopStep(2)">ذخیره و ادامه</button></div>
+    </div>
+   </div>
+
+   <div class="ws-stage ws-hidden" data-stage="2">
+    <div class="ws-card">
+     <div class="section-head"><div><h3>۲. مبانی راهبرد شرکت</h3><p>قبل از OKR باید بدانیم سازمان چرا وجود دارد، کجا می‌خواهد برسد و ستاره شمالی آن چیست.</p></div></div>
+     <div class="ws-grid">
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('mission')">ⓘ</button><div class="label">MISSION · مأموریت</div><h4>امروز چه مسئولیتی داریم؟</h4><p>مدیریت و توسعه ایمن، کارآمد و نوآورانه زیرساخت‌ها و خدمات حمل‌ونقل هوایی و دریایی کیش؛ با کیفیت، استانداردهای بین‌المللی، فناوری، سرمایه انسانی و مدل‌های درآمدی پایدار.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('vision')">ⓘ</button><div class="label">VISION · چشم‌انداز ۱۴۱۰</div><h4>در آینده می‌خواهیم چه جایگاهی داشته باشیم؟</h4><p>حفظ جایگاه برتر ملی و گسترش اثربخشی، نوآوری و اعتبار در سطح منطقه‌ای؛ تبدیل‌شدن به سازمانی خوشنام، پیشرو و قابل اتکا در حمل‌ونقل و لجستیک هوایی و دریایی.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('northstar')">ⓘ</button><div class="label">ULTIMATE GOAL · NORTH STAR</div><h4>مقصد الهام‌بخش و بلندمدت</h4><p>تبدیل‌شدن به سازمانی پیشرو، ایمن و نوآور که به‌عنوان دروازه بین‌المللی کیش، الگویی برای توسعه پایدار، سرمایه‌گذاری راهبردی و ارتقاء برند ملی و منطقه‌ای ایران باشد.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('values')">ⓘ</button><div class="label">CORE VALUES · ارزش‌ها</div><h4>قواعد حرکت ما</h4><p>کیفیت و بهره‌وری؛ مشتری‌مداری و پاسخگویی؛ نوآوری و تحول دیجیتال؛ توسعه پایدار؛ همکاری راهبردی؛ حرفه‌ای‌گرایی، اخلاق و یادگیری مستمر.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('cadence')">ⓘ</button><div class="label">CADENCE · ریتم اجرا</div><h4>چه زمانی هدف می‌گذاریم و مرور می‌کنیم؟</h4><p>در فایل Perdoo، OKRهای راهبردی معمولاً سالانه و OKRهای تاکتیکی تیمی معمولاً فصلی هستند؛ Check-inها نیز به‌طور منظم برای به‌روزرسانی پیشرفت انجام می‌شوند.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('alignment')">ⓘ</button><div class="label">ALIGNMENT · هم‌راستایی</div><h4>هر هدف تیمی به چه هدف بالاتری خدمت می‌کند؟</h4><p>در Team OKRs فایل اکسل، هر Objective تیمی یک «Aligned to» دارد. در این کارگاه هم شما باید هدف حوزه خود را به یکی از ۱۳ هدف شرکت وصل کنید.</p></article>
+     </div>
+     <div class="ws-callout green" id="wsFoundationDept"></div>
+     <div class="ws-actions"><button class="btn" onclick="showWorkshopStep(1)">قبلی</button><button class="btn blue" onclick="showWorkshopStep(3)">ادامه: Pillarها</button></div>
+    </div>
+   </div>
+
+   <div class="ws-stage ws-hidden" data-stage="3">
+    <div class="ws-card">
+     <div class="section-head"><div><h3>۳. Strategic Pillar و Health KPI</h3><p>روی هر ستون کلیک کنید تا معنی آن برای حوزه شما نمایش داده شود.</p></div><button class="info-btn" onclick="openGlossary('pillar')">ⓘ</button></div>
+     <div class="ws-pillars" id="wsPillars"></div>
+     <div class="ws-callout" id="wsPillarExplain"><strong>یک Pillar را انتخاب کنید.</strong><p>تفسیر کارگاهی آن برای حوزه شما اینجا نمایش داده می‌شود.</p></div>
+     <div class="ws-callout gold"><strong><button class="term-link" onclick="openGlossary('healthkpi')">Health KPI چیست؟</button></strong><p>Health KPI مثل علائم حیاتی است: وضعیت پایدار یک Pillar را می‌سنجد. با Key Result فرق دارد؛ KPI معمولاً بلندمدت و مداوم است، KR کوتاه‌مدت‌تر و متصل به یک Objective مشخص.</p></div>
+     <div class="ws-actions"><button class="btn" onclick="showWorkshopStep(2)">قبلی</button><button class="btn blue" onclick="showWorkshopStep(4)">ادامه: Company OKR</button></div>
+    </div>
+   </div>
+
+   <div class="ws-stage ws-hidden" data-stage="4">
+    <div class="ws-card">
+     <div class="section-head"><div><h3>۴. Company OKR را انتخاب و برای حوزه خود معنا کنید</h3><p>Company Objective همان هدف بالادستی است که Team Objective شما باید به آن کمک کند.</p></div><button class="info-btn" onclick="openGlossary('objective')">ⓘ</button></div>
+     <div class="ws-form">
+      <div class="ws-field full"><label>Company Objective</label><select class="select" id="wsCompanyObjective" onchange="renderWorkshopObjective()"></select></div>
+     </div>
+     <div class="ws-objective-preview" id="wsObjectivePreview"></div>
+     <div class="ws-callout green" id="wsObjectiveDept"></div>
+     <div class="ws-actions"><button class="btn" onclick="showWorkshopStep(3)">قبلی</button><button class="btn blue" onclick="saveWorkshopDraft();showWorkshopStep(5)">ادامه: ساخت Team OKR</button></div>
+    </div>
+   </div>
+
+   <div class="ws-stage ws-hidden" data-stage="5">
+    <div class="ws-card">
+     <div class="section-head"><div><h3>۵. Team OKR حوزه خود را بسازید</h3><p>ساختار این بخش مستقیماً از شیت Team OKRs فایل Perdoo گرفته شده است.</p></div></div>
+     <div class="okr-builder">
+      <div class="okr-head"><strong id="wsTeamTitle">TEAM OKR</strong><span>Timeframe: <select id="wsTimeframe" class="select" style="min-width:110px;padding:5px 8px"><option>فصل جاری</option><option>سال جاری</option></select></span></div>
+      <div class="okr-row objective"><div class="okr-type">OBJECTIVE <button class="term-link" onclick="openGlossary('objective')">ⓘ</button></div><input class="input" id="wsTeamObjective" placeholder="هدف کیفی، روشن و جهت‌دهنده؛ ترجیحاً بدون عدد" oninput="saveWorkshopDraft()"><div class="okr-progress"><span>پیشرفت خودکار</span><strong id="wsObjProgress">۰٪</strong></div></div>
+      <div class="okr-row"><div class="okr-type">ALIGNED TO <button class="term-link" onclick="openGlossary('alignment')">ⓘ</button></div><div id="wsAlignedText">—</div><div></div></div>
+      <div class="okr-row"><div class="okr-type">KEY RESULT 1 <button class="term-link" onclick="openGlossary('kr')">ⓘ</button></div><input class="input ws-kr" id="wsKR1" placeholder="مثلاً کاهش زمان خدمت از ۱۲ به ۹ دقیقه" oninput="saveWorkshopDraft()"><div class="okr-progress"><input type="range" min="0" max="100" value="0" id="wsKRP1" oninput="recalcWorkshopProgress();saveWorkshopDraft()"><strong id="wsKRP1V">۰٪</strong></div></div>
+      <div class="okr-row"><div class="okr-type">KEY RESULT 2</div><input class="input ws-kr" id="wsKR2" placeholder="یک نتیجه قابل سنجش با Target" oninput="saveWorkshopDraft()"><div class="okr-progress"><input type="range" min="0" max="100" value="0" id="wsKRP2" oninput="recalcWorkshopProgress();saveWorkshopDraft()"><strong id="wsKRP2V">۰٪</strong></div></div>
+      <div class="okr-row"><div class="okr-type">KEY RESULT 3</div><input class="input ws-kr" id="wsKR3" placeholder="یک نتیجه قابل سنجش دیگر" oninput="saveWorkshopDraft()"><div class="okr-progress"><input type="range" min="0" max="100" value="0" id="wsKRP3" oninput="recalcWorkshopProgress();saveWorkshopDraft()"><strong id="wsKRP3V">۰٪</strong></div></div>
+      <div class="okr-row"><div class="okr-type">INITIATIVE 1 <button class="term-link" onclick="openGlossary('initiative')">ⓘ</button></div><input class="input ws-init" id="wsIN1" placeholder="اقدامی که مستقیماً در کنترل تیم است" oninput="saveWorkshopDraft()"><div class="okr-progress"><input type="range" min="0" max="100" value="0" id="wsINP1" oninput="saveWorkshopDraft()"><strong id="wsINP1V">۰٪</strong></div></div>
+      <div class="okr-row"><div class="okr-type">INITIATIVE 2</div><input class="input ws-init" id="wsIN2" placeholder="مثلاً بازطراحی یک فرآیند یا اجرای یک پروژه" oninput="saveWorkshopDraft()"><div class="okr-progress"><input type="range" min="0" max="100" value="0" id="wsINP2" oninput="saveWorkshopDraft()"><strong id="wsINP2V">۰٪</strong></div></div>
+      <div class="okr-row"><div class="okr-type">INITIATIVE 3</div><input class="input ws-init" id="wsIN3" placeholder="اقدام اجرایی سوم" oninput="saveWorkshopDraft()"><div class="okr-progress"><input type="range" min="0" max="100" value="0" id="wsINP3" oninput="saveWorkshopDraft()"><strong id="wsINP3V">۰٪</strong></div></div>
+     </div>
+     <div class="ws-callout"><strong>منطق محاسبه مثل Excel:</strong><p>درصد Objective از میانگین پیشرفت Key Resultها به‌دست می‌آید. تکمیل Initiativeها مستقیماً درصد Objective را بالا نمی‌برد، چون Initiative «کار» است و KR «نتیجه» را می‌سنجد.</p></div>
+     <div class="ws-actions"><button class="btn" onclick="showWorkshopStep(4)">قبلی</button><button class="btn blue" onclick="evaluateWorkshop();showWorkshopStep(6)">ارزیابی پاسخ من</button></div>
+    </div>
+   </div>
+
+   <div class="ws-stage ws-hidden" data-stage="6">
+    <div class="ws-card">
+     <div class="section-head"><div><h3>۶. ارزیابی ساختاری و خروجی شخصی</h3><p>نسخه فعلی بدون اتصال به AI، پاسخ شما را با قواعد OKR/Perdoo بررسی می‌کند.</p></div></div>
+     <div class="ws-score"><div class="score-ring" id="wsScoreRing" style="--score:0"><strong id="wsScore">۰</strong><span>از ۱۰۰</span></div><div><h4 id="wsScoreTitle">هنوز ارزیابی نشده</h4><div class="ws-feedback" id="wsFeedback"></div></div></div>
+     <div class="ws-card" style="margin:14px 0 0;background:#fafbfd">
+      <h4>خلاصه خروجی شما</h4><div id="wsReport" style="font-size:9px;line-height:2;color:#566173;margin-top:8px"></div>
+     </div>
+     <div class="ws-callout gold"><strong>نکته درباره تحلیل متن آزاد:</strong><p>این نسخه ارزیابی ساختاری انجام می‌دهد. برای تحلیل عمیق معناییِ پاسخ‌های توصیفی طبق Rubric مدرس، در مرحله بعد می‌توان Backend + AI را به همین Workshop Mode وصل کرد.</p></div>
+     <div class="ws-actions no-print"><button class="btn" onclick="showWorkshopStep(5)">بازگشت و اصلاح</button><button class="btn blue" onclick="downloadWorkshop()">دانلود خروجی</button><button class="btn" onclick="window.print()">چاپ / ذخیره PDF</button><button class="btn" onclick="resetWorkshop()">شروع مجدد</button></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
 <section class="page" id="dashboard">
  <div class="section-head"><div><h3>داشبورد مدیرعامل</h3><p>فقط آنچه برای پیگیری و تصمیم لازم است.</p></div></div>
  <div class="quickstats"><div class="stat"><div class="k">۱۳</div><div class="l">اهداف راهبردی</div><div class="mini">Company Objectives</div></div><div class="stat"><div class="k">۱۸</div><div class="l">Health KPI</div><div class="mini">Vital metrics</div></div><div class="stat"><div class="k" id="statUpdated">۰</div><div class="l">هدف دارای داده</div><div class="mini">Updated</div></div><div class="stat"><div class="k" id="statRisk">۰</div><div class="l">نیازمند توجه</div><div class="mini">Risk / Off track</div></div></div>
  <div class="dash-grid"><div class="panel"><h4>Executive Progress</h4><div id="execProgress"></div></div><div class="panel"><h4>Management Attention</h4><div id="riskList"></div></div></div>
 </section>
 </div></main></div>
-<nav class="bottom-nav" id="mobileNav"><button class="active" data-page="home">خانه</button><button data-page="strategy">راهبرد</button><button data-page="kpis">KPI</button><button data-page="checkin">پیشرفت</button><button data-page="dashboard">داشبورد</button></nav>
+<nav class="bottom-nav" id="mobileNav"><button class="active" data-page="home">خانه</button><button data-page="workshop">کارگاه</button><button data-page="strategy">راهبرد</button><button data-page="kpis">KPI</button><button data-page="checkin">پیشرفت</button><button data-page="dashboard">داشبورد</button></nav>
+
+<div class="modal-backdrop" id="glossaryBackdrop" onclick="if(event.target===this)closeGlossary()">
+ <div class="glossary-modal">
+  <button class="modal-close" onclick="closeGlossary()">×</button>
+  <div class="eyebrow" id="glossaryEn">STRATEGY TERM</div>
+  <h3 id="glossaryTitle">تعریف</h3>
+  <p id="glossaryText"></p>
+  <div class="glossary-example"><b>مثال / کاربرد در کارگاه</b><div id="glossaryExample"></div></div>
+ </div>
+</div>
+
 <script>
 const PILLARS=[
 {id:1,fa:'ایمنی و کیفیت',en:'Safety & Quality',color:'#e45858',icon:'✚',desc:'ارتقاء مستمر استانداردهای ایمنی، کیفیت خدمات و انطباق با مقررات بین‌المللی.',kpis:['Accident Rate','RFFS Response Time','Compliance Rate']},
@@ -140,7 +291,97 @@ const OBJECTIVES=[
 ];
 const INITIATIVES=[
 {title:'استقرار سامانه دیجیتال هماهنگی پرواز',goal:3,unit:'فرودگاه · عملیات هوانوردی'},{title:'ایجاد سیستم مدیریت پروژه دیجیتال برای پروژه‌های فنی',goal:10,unit:'فرودگاه · فنی و پشتیبانی'},{title:'طراحی نظام زمان‌بندی مرحله‌ای برای پروژه‌های اسکله‌ها',goal:5,unit:'بنادر · عملیات دریانوردی'},{title:'اجرای فرآیند یکپارچه تدارکات بندری',goal:2,unit:'بنادر · فنی و پشتیبانی'},{title:'طراحی نظام ارزیابی بهره‌وری زمانی پروژه‌ها',goal:2,unit:'مالی و اداری'},{title:'استقرار داشبورد مالی هوشمند برای پایش تخصیص منابع',goal:10,unit:'مالی'},{title:'طراحی نظام برنامه‌ریزی پیش‌دستانه عملیات',goal:2,unit:'عملیات'},{title:'استقرار سامانه پایش آنلاین پیشرفت پروژه‌های بندری',goal:10,unit:'بنادر'},{title:'ایجاد نظام ارزیابی پیمانکاران برای تسریع پروژه‌ها',goal:5,unit:'پروژه و پیمانکاران'},{title:'برگزاری دوره‌های آموزشی مدیریت زمان پروژه‌ها برای مدیران',goal:13,unit:'منابع انسانی'},{title:'ایجاد فرآیند تأمین مالی سریع پروژه‌ها',goal:5,unit:'مالی'}
+
 ];
+
+const WORKSHOP_GLOSSARY={
+ mission:{en:'MISSION',title:'مأموریت',text:'مأموریت بیان می‌کند سازمان چرا وجود دارد و امروز چه مسئولیت‌هایی بر عهده دارد. در سند کیش، مأموریت بر مدیریت و توسعه ایمن، کارآمد و نوآورانه زیرساخت‌ها و خدمات حمل‌ونقل هوایی و دریایی، کیفیت، استانداردهای ICAO/IMO، فناوری، سرمایه انسانی و درآمد پایدار تأکید دارد.',example:'متن رسمی سند: شرکت توسعه و مدیریت بنادر و فرودگاه‌های کیش، با بهره‌گیری از موقعیت استراتژیک جزیره کیش و تعامل سازنده با نهادهای داخلی و بین‌المللی، مأموریت دارد زیرساخت‌ها و خدمات حمل‌ونقل هوایی و دریایی کیش را به‌صورت ایمن، کارآمد و نوآورانه مدیریت و توسعه دهد. شرکت متعهد به ارتقای کیفیت خدمات، رعایت استانداردهای بین‌المللی ICAO و IMO و بهره‌گیری از فناوری‌های روز و هوشمندسازی برای پاسخگویی مؤثر به نیازهای ذی‌نفعان است؛ و با تکیه بر سرمایه انسانی متخصص، مدل‌های پایدار درآمدزایی، بهینه‌سازی فرآیندها و جذب مشارکت‌های راهبردی را دنبال می‌کند.'},
+ vision:{en:'VISION',title:'چشم‌انداز',text:'چشم‌انداز تصویر آینده مطلوب سازمان است. سند کیش افق ۱۴۱۰ را تعریف می‌کند: حفظ جایگاه برتر ملی و گسترش اثربخشی، نوآوری و اعتبار در سطح منطقه‌ای؛ با اتکا به سرمایه انسانی، زیرساخت، پایداری و تعامل با ذی‌نفعان.',example:'متن رسمی سند با افق ۱۴۱۰: حفظ جایگاه برتر در سطح ملی، تبدیل‌شدن به الگوی تخصصی حمل‌ونقل و لجستیک هوایی و دریایی، گسترش اثربخشی، نوآوری و اعتبار در سطح منطقه‌ای و بدل‌شدن به سازمانی خوشنام، پیشرو و قابل اتکا؛ با اتکا به سرمایه انسانی توانمند، ارتقای زیرساخت‌ها، توسعه پایدار و تعامل هدفمند با ذی‌نفعان.'},
+ northstar:{en:'ULTIMATE GOAL / NORTH STAR',title:'هدف نهایی / ستاره شمالی',text:'در چارچوب Perdoo، Ultimate Goal یا North Star بالاترین سطح هدف است؛ الهام‌بخش، پایدار و بلندمدت. همه Pillarها و Objectiveها باید به سمت آن جهت‌گیری کنند.',example:'North Star کیش: تبدیل‌شدن به سازمانی پیشرو، ایمن و نوآور و دروازه بین‌المللی جزیره، با نقش الگویی در توسعه پایدار، سرمایه‌گذاری و برند.'},
+ values:{en:'CORE VALUES',title:'ارزش‌های سازمانی',text:'ارزش‌ها قواعد رفتار و تصمیم‌گیری‌اند؛ یعنی می‌گویند «چگونه عمل می‌کنیم». در سند کیش شش محور آمده: کیفیت و بهره‌وری؛ مشتری‌مداری و پاسخگویی؛ نوآوری و تحول دیجیتال؛ توسعه پایدار و مسئولیت اجتماعی؛ همکاری راهبردی؛ حرفه‌ای‌گرایی، اخلاق و یادگیری مستمر.',example:'وقتی بین سرعت و ایمنی تعارض ایجاد می‌شود، ارزش‌ها به تصمیم مدیر جهت می‌دهند.'},
+ pillar:{en:'STRATEGIC PILLAR',title:'ستون راهبردی',text:'Pillar حوزه کلیدی و نسبتاً پایدار تمرکز راهبردی است. Pillar از Objective پایدارتر است و معمولاً چندسال ثابت می‌ماند. اهداف و KRها زیر این چترهای موضوعی سازماندهی می‌شوند.',example:'«ایمنی و کیفیت» یک Pillar است؛ «کاهش زمان واکنش خدمات اضطراری» می‌تواند KR یا شاخص مرتبط با آن باشد.'},
+ healthkpi:{en:'HEALTH KPI / HEALTH METRIC',title:'شاخص سلامت',text:'Health KPI وضعیت پایدار هر Pillar و سلامت جاری کسب‌وکار را پایش می‌کند. در سند کیش این شاخص‌ها «علائم حیاتی» سازمان نامیده شده‌اند. KPI معمولاً بلندمدت و مداوم است.',example:'Accident Rate یا Customer Satisfaction Index می‌توانند Health KPI باشند؛ آنها را دائماً پایش می‌کنیم.'},
+ objective:{en:'OBJECTIVE',title:'هدف (Objective)',text:'Objective جهت و تغییر مطلوب را مشخص می‌کند. طبق فایل Perdoo، Objective باید روشن، جهت‌دهنده و کیفی باشد. درصد آن از پیشرفت Key Resultهای مرتبط به‌طور خودکار محاسبه می‌شود.',example:'«تجربه مسافر را به شکل معناداری ارتقا دهیم» Objective است؛ عدد هدف را در KR می‌گذاریم.'},
+ kr:{en:'KEY RESULT',title:'نتیجه کلیدی',text:'Key Result یک معیار با Target است که نشان می‌دهد چقدر به Objective نزدیک شده‌ایم. KR باید قابل سنجش و نتیجه‌محور باشد؛ نه صرفاً فهرست کارها. فایل Perdoo توصیه می‌کند Targetها چالش‌برانگیز باشند.',example:'«کاهش میانگین زمان خدمت از ۱۲ دقیقه به ۹ دقیقه» KR است؛ «برگزاری جلسه بهبود فرآیند» Initiative است.'},
+ initiative:{en:'INITIATIVE',title:'ابتکار / اقدام اجرایی',text:'Initiative کاری است که تیم مستقیماً کنترل می‌کند و برای اثرگذاری بر KR انجام می‌دهد. طبق فایل Perdoo، تکمیل Initiative به‌خودی‌خود درصد Objective را افزایش نمی‌دهد، چون فعالیت است نه شاخص موفقیت.',example:'«راه‌اندازی صف دیجیتال» Initiative است. نتیجه مورد انتظار آن باید در KR اندازه‌گیری شود.'},
+ alignment:{en:'ALIGNMENT',title:'هم‌راستایی',text:'Alignment یعنی هدف تیمی یا واحدی مشخص کند به کدام هدف بالادستی شرکت کمک می‌کند. در شیت Team OKRs فایل Perdoo این ارتباط با فیلد «Aligned to» ثبت می‌شود.',example:'هدف فرودگاه درباره کاهش زمان پردازش مسافر می‌تواند به Objective 2 یا 3 شرکت هم‌راستا شود، بسته به مسئله اصلی.'},
+ cadence:{en:'CADENCE',title:'ریتم هدف‌گذاری و مرور',text:'Cadence دوره زمانی تنظیم و مرور OKRهاست. فایل Perdoo می‌گوید بسیاری از شرکت‌ها OKRهای راهبردی را سالانه و OKRهای تاکتیکی را فصلی تنظیم می‌کنند؛ البته ریتم می‌تواند متناسب با سرعت تغییر سازمان متفاوت باشد.',example:'Company OKR سالانه + Team OKR فصلی + Check-inهای منظم یک ریتم ساده برای استقرار اولیه است.'},
+ checkin:{en:'CHECK-IN',title:'چک‌این / به‌روزرسانی پیشرفت',text:'Check-in مرور کوتاه و منظم وضعیت پیشرفت است: درصد پیشرفت، اطمینان، مانع و گام بعدی. هدف آن به‌روزرسانی مداوم است نه گزارش‌سازی سنگین.',example:'هر هفته ۵ دقیقه برای هر KR: پیشرفت چند درصد شد؟ مانع چیست؟ گام بعدی چیست؟'}
+};
+
+const WS_DEPTS={
+ port:{label:'بندر',focus:'عملیات دریایی، اسکله، بار، ایمنی دریایی، لجستیک و بهره‌وری تجهیزات بندری',
+ foundation:'برای حوزه بندر، راهبرد کلان باید به زبان ایمنی دریایی، روانی عملیات اسکله، زمان خدمت، بهره‌وری تجهیزات، درآمدهای بندری و تجربه ذی‌نفعان دریایی ترجمه شود.',
+ pillars:{
+  1:'ایمنی عملیات دریایی و اسکله، کاهش حادثه، انطباق با الزامات IMO و کیفیت خدمت به شناورها و صاحبان کالا.',
+  2:'کاهش زمان توقف و انتظار، افزایش بهره‌وری جرثقیل و تجهیزات، کنترل هزینه واحد عملیات و حذف اتلاف.',
+  3:'دیجیتال‌سازی گردش کار بندر، Port-CDM، رهگیری، گزارش‌دهی لحظه‌ای و کاهش زمان سرویس.',
+  4:'توسعه درآمدهای پایدار بندری، جذب سرمایه برای زیرساخت و مشارکت با بخش خصوصی.',
+  5:'توانمندسازی نیروهای عملیاتی و فنی، فرهنگ ایمنی، جانشین‌پروری و یادگیری مستمر.',
+  6:'تجربه صاحبان کالا/خطوط کشتیرانی، اعتبار بندر کیش و تعامل حرفه‌ای با ذی‌نفعان.'
+ }},
+ airport:{label:'فرودگاه',focus:'عملیات هوانوردی، ایمنی پرواز، خدمات مسافر، ترمینال، فنی و زیرساخت فرودگاهی',
+ foundation:'برای حوزه فرودگاه، راهبرد باید به زبان ایمنی پرواز، تجربه مسافر، زمان خدمت، آمادگی عملیاتی، دیجیتال‌سازی و درآمدهای هوانوردی/غیرهوانوردی ترجمه شود.',
+ pillars:{
+  1:'ایمنی پرواز، RFFS، انطباق ICAO، کیفیت عملیات و کاهش Findings.',
+  2:'بهره‌وری گیت و ترمینال، کاهش زمان خدمت، استفاده بهتر از نیروی انسانی و تجهیزات.',
+  3:'خدمات دیجیتال مسافر، هماهنگی دیجیتال پرواز، داده‌محوری و هوشمندسازی ترمینال.',
+  4:'سرمایه‌گذاری زیرساختی، PPP و توسعه درآمدهای غیرهوانوردی.',
+  5:'شایستگی فنی، فرهنگ ایمنی، آموزش، Engagement و نگهداشت نیروی کلیدی.',
+  6:'رضایت مسافر، NPS، تجربه سفر و تقویت برند فرودگاه و جزیره کیش.'
+ }},
+ admin:{label:'معاونت مالی و اداری',focus:'مالی، منابع انسانی، تدارکات، پشتیبانی، بودجه، سرمایه انسانی و کنترل مدیریتی',
+ foundation:'برای مالی و اداری، ترجمه راهبرد یعنی فراهم‌کردن منابع، انسان، بودجه، تدارکات و کنترل‌هایی که اجرای اهداف بندر و فرودگاه را ممکن و پایدار کنند.',
+ pillars:{
+  1:'کنترل‌های ایمنی و کیفیت در خرید، پیمان، منابع انسانی و پشتیبانی؛ نه فقط عملیات.',
+  2:'بودجه‌ریزی، کنترل هزینه، بهره‌وری نیروی انسانی، تدارکات و حذف اتلاف اداری.',
+  3:'داشبورد مالی، فرآیندهای دیجیتال، داده‌های منابع انسانی و اتوماسیون گردش کار.',
+  4:'تأمین مالی، مدل اقتصادی پروژه‌ها، مدیریت سرمایه و پشتیبانی از PPP.',
+  5:'هسته اصلی این حوزه: شایستگی، آموزش، Engagement، نگهداشت و فرهنگ پاسخگویی.',
+  6:'کیفیت پاسخگویی داخلی، شفافیت و نقش خدمات ستادی در تجربه ذی‌نفعان.'
+ }},
+ economic:{label:'معاونت اقتصادی',focus:'سرمایه‌گذاری، توسعه کسب‌وکار، درآمد، قراردادهای تجاری و مشارکت‌ها',
+ foundation:'برای معاونت اقتصادی، راهبرد باید به سبد درآمد، جذب سرمایه‌گذار، تجاری‌سازی دارایی‌ها، PPP و توسعه ارزش برای ذی‌نفعان ترجمه شود.',
+ pillars:{
+  1:'کیفیت و ایمنی به‌عنوان شرط اعتبار و جذابیت اقتصادی پروژه‌ها و خدمات.',
+  2:'اقتصاد واحد خدمت، بهره‌وری دارایی‌ها و افزایش بازده استفاده از فضا و زیرساخت.',
+  3:'محصولات و خدمات دیجیتال درآمدزا، داده برای تصمیم سرمایه‌گذاری و تجربه مشتری.',
+  4:'هسته اصلی حوزه: درآمدهای پایدار، PPP، جذب سرمایه و تنوع منابع درآمدی.',
+  5:'توسعه شایستگی مذاکره، سرمایه‌گذاری، قرارداد و مدیریت شریک.',
+  6:'برند تجاری، رضایت سرمایه‌گذار، اعتبار منطقه‌ای و شبکه شرکای راهبردی.'
+ }},
+ ceo:{label:'حوزه مدیرعامل',focus:'یکپارچگی راهبرد، حکمرانی، پایش اجرا، تصمیم‌های بین‌حوزه‌ای و روابط کلیدی',
+ foundation:'برای حوزه مدیرعامل، ترجمه راهبرد یعنی نگه‌داشتن خط دید کلان: هم‌راستایی بین حوزه‌ها، حل تعارض اولویت‌ها، پایش شاخص‌ها و تصمیم‌گیری درباره موارد نیازمند مداخله.',
+ pillars:{
+  1:'اطمینان از اینکه ایمنی و کیفیت در تصمیم‌های کلان قربانی فشار کوتاه‌مدت نمی‌شود.',
+  2:'پایش بهره‌وری کل شرکت و حذف گلوگاه‌های بین‌حوزه‌ای.',
+  3:'حکمرانی داده و دیجیتال، اولویت‌بندی سرمایه‌گذاری فناوری و استفاده از داشبورد.',
+  4:'تصمیم‌های سرمایه‌گذاری، سبد پروژه‌ها، PPP و پایداری اقتصادی.',
+  5:'فرهنگ، پاسخگویی مدیران، توسعه جانشینان و کیفیت تیم رهبری.',
+  6:'روابط حاکمیتی، برند کیش، ذی‌نفعان کلیدی و جایگاه ملی/منطقه‌ای.'
+ }}
+};
+
+const WS_OBJECTIVE_LENS={
+ 1:'این هدف باید به کاهش ریسک، افزایش انطباق و بالا رفتن کیفیت خدمت در فرآیندهای حوزه شما تبدیل شود.',
+ 2:'این هدف باید به یک بهبود قابل‌اندازه‌گیری در زمان، هزینه، ظرفیت یا بهره‌وری منابع حوزه شما تبدیل شود.',
+ 3:'این هدف باید یک فرآیند مهم حوزه شما را دیجیتال، ساده‌تر، سریع‌تر یا داده‌محورتر کند.',
+ 4:'این هدف باید وابستگی به درآمدهای سنتی را کم و یک منبع یا مدل درآمدی پایدارتر ایجاد کند.',
+ 5:'این هدف باید به جذب، تسریع یا هدایت سرمایه برای پروژه‌های زیرساختی دارای اولویت کمک کند.',
+ 6:'این هدف در حوزه شما یعنی رفتاری که اعتبار، قابلیت اتکا و تصویر حرفه‌ای شرکت را تقویت کند.',
+ 7:'این هدف باید تجربه یکی از ذی‌نفعان کلیدی حوزه شما را ملموس و قابل‌اندازه‌گیری بهتر کند.',
+ 8:'این هدف باید یک رابطه، توافق یا همکاری راهبردی را از حالت تشریفاتی به نتیجه عملی تبدیل کند.',
+ 9:'این هدف باید ارزش‌ها، پاسخگویی، حرفه‌ای‌گرایی و رفتار مدیریتی را در کار روزمره حوزه شما قابل مشاهده کند.',
+ 10:'این هدف باید تصمیم‌های حوزه شما را با داده به‌موقع، معتبر و قابل دسترس پشتیبانی کند.',
+ 11:'این هدف باید اثر اجتماعی یا زیست‌محیطی فعالیت حوزه شما را اندازه‌گیری و بهبود دهد.',
+ 12:'این هدف باید توان حوزه شما برای پیشگیری، واکنش و بازیابی در برابر اختلال را بالا ببرد.',
+ 13:'این هدف باید یک شکاف شایستگی واقعی را ببندد و توان فنی یا رفتاری افراد کلیدی حوزه را بالا ببرد.'
+};
+
+let wsProfile=parseJSON(storageGet('kish-workshop-profile'),{name:'',role:'',dept:'',subunit:''});
+let wsDraft=parseJSON(storageGet('kish-workshop-draft'),{objectiveId:1,teamObjective:'',krs:['','',''],krp:[0,0,0],initiatives:['','',''],inp:[0,0,0],timeframe:'فصل جاری',score:null,feedback:[]});
+let wsCurrentStep=1,wsSelectedPillar=null;
+
 const lowerBetter=new Set(['Accident Rate','RFFS Response Time','Unit Cost per Operation','CO₂ Emissions per Passenger / per TEU','Energy Intensity per Operation','Critical Data Availability Time (CDAT)','Mean Time to Recovery (MTTR)','Project Kick-off Time']);
 function storageGet(key){try{return localStorage.getItem(key)}catch(e){return null}}
 function storageSet(key,val){try{localStorage.setItem(key,val)}catch(e){}}
@@ -174,11 +415,32 @@ function saveCheckin(){const key=document.getElementById('checkGoal').value,owne
 function labelForKey(k){if(k.startsWith('obj-')){const id=+k.split('-')[1];return`O${id} — ${oBy(id).title}`}const[_,oid,idx]=k.split('-');return`O${oid} · KR${Number(idx)+1} — ${oBy(+oid).krs[+idx]}`}
 function renderTimeline(){const el=document.getElementById('timeline');el.innerHTML=checks.length?checks.slice(0,9).map(c=>`<article class="checkitem"><strong>${labelForKey(c.key)}</strong><div class="check-meta"><span>${new Date(c.ts).toLocaleString('fa-IR')}</span><span>${fa(c.progress)}٪</span><span class="status"><i class="dot ${status(c).cls}"></i>${status(c).label}</span>${c.owner?`<span>Owner: ${esc(c.owner)}</span>`:''}</div>${c.blocker?`<div class="note-line">⚠ ${esc(c.blocker)}</div>`:''}${c.next?`<div class="note-line">← ${esc(c.next)}</div>`:''}</article>`).join(''):'<div class="empty">هنوز Check-in ثبت نشده است.</div>'}
 function renderDashboard(){const states=OBJECTIVES.map(o=>({o,s:objState(o.id)})).filter(x=>x.s),risks=states.filter(x=>x.s.confidence!=='on-track');document.getElementById('statUpdated').textContent=fa(states.length);document.getElementById('statRisk').textContent=fa(risks.length);document.getElementById('homeUpdated').textContent=fa(states.length);document.getElementById('execProgress').innerHTML=states.length?states.map(({o,s})=>`<div class="exec-row"><div class="exec-head"><span>O${o.id} — ${o.title}</span><span>${fa(pct(s))}٪</span></div><div class="progress"><span style="width:${pct(s)}%;background:${status(s).cls==='ok'?'var(--green)':status(s).cls==='warn'?'var(--amber)':'var(--red)'}"></span></div></div>`).join(''):'<div class="empty">برای ساخت تصویر اجرایی، Check-in ثبت کنید.</div>';document.getElementById('riskList').innerHTML=risks.length?risks.map(({o,s})=>`<article class="risk"><strong>O${o.id} — ${o.title}</strong><div class="status" style="margin-top:5px"><i class="dot ${status(s).cls}"></i>${status(s).label}</div><p>${s.blocker?'مانع: '+esc(s.blocker):'مانع مشخصی ثبت نشده است.'}</p></article>`).join(''):'<div class="empty">مورد نیازمند توجه ثبت نشده است.</div>';document.getElementById('homeRisks').innerHTML=risks.length?risks.slice(0,4).map(({o,s})=>`<article class="risk"><strong>O${o.id} — ${o.title}</strong><p>${s.blocker?'مانع: '+esc(s.blocker):status(s).label}</p></article>`).join(''):'<div class="empty">هنوز مورد نیازمند توجه ثبت نشده است.<br>با Check-inهای واقعی، این بخش به‌صورت خودکار ساخته می‌شود.</div>'}
+
+function openGlossary(key){const g=WORKSHOP_GLOSSARY[key];if(!g)return;document.getElementById('glossaryEn').textContent=g.en;document.getElementById('glossaryTitle').textContent=g.title;document.getElementById('glossaryText').textContent=g.text;document.getElementById('glossaryExample').textContent=g.example;document.getElementById('glossaryBackdrop').classList.add('show')}
+function closeGlossary(){document.getElementById('glossaryBackdrop').classList.remove('show')}
+function wsDept(){return WS_DEPTS[wsProfile.dept]||null}
+function selectWorkshopDept(key){wsProfile.dept=key;document.querySelectorAll('#wsDeptChoices button').forEach(b=>b.classList.toggle('active',b.dataset.dept===key));renderWorkshopProfile();renderWorkshopFoundation()}
+function saveWorkshopProfile(){wsProfile.name=document.getElementById('wsName').value.trim();wsProfile.role=document.getElementById('wsRole').value.trim();wsProfile.subunit=document.getElementById('wsSubunit').value.trim();if(!wsProfile.dept){alert('لطفاً حوزه اصلی خود را انتخاب کنید.');return false}storageSet('kish-workshop-profile',JSON.stringify(wsProfile));renderWorkshopProfile();renderWorkshopFoundation();return true}
+function renderWorkshopProfile(){const d=wsDept(),title=d?d.label:'هنوز حوزه انتخاب نشده';document.getElementById('wsProfileTitle').textContent=title+(wsProfile.subunit?' · '+wsProfile.subunit:'');document.getElementById('wsProfileSub').textContent=wsProfile.name?(wsProfile.name+(wsProfile.role?' · '+wsProfile.role:'')):'اطلاعات این کارگاه فقط روی همین دستگاه ذخیره می‌شود.';if(document.getElementById('wsName'))document.getElementById('wsName').value=wsProfile.name||'';if(document.getElementById('wsRole'))document.getElementById('wsRole').value=wsProfile.role||'';if(document.getElementById('wsSubunit'))document.getElementById('wsSubunit').value=wsProfile.subunit||'';document.querySelectorAll('#wsDeptChoices button').forEach(b=>b.classList.toggle('active',b.dataset.dept===wsProfile.dept))}
+function renderWorkshopFoundation(){const d=wsDept();const el=document.getElementById('wsFoundationDept');if(el)el.innerHTML=d?`<strong>ترجمه برای ${d.label}${wsProfile.subunit?' / '+esc(wsProfile.subunit):''}</strong><p>${d.foundation}</p>`:'<strong>ابتدا حوزه خود را انتخاب کنید.</strong><p>بعد از انتخاب، ترجمه اجرایی مبانی راهبرد برای حوزه شما نمایش داده می‌شود.</p>'}
+function showWorkshopStep(n){if(n>1&&!wsProfile.dept){showWorkshopStep(1);alert('برای شخصی‌سازی کارگاه، ابتدا حوزه خود را انتخاب کنید.');return}wsCurrentStep=n;document.querySelectorAll('.ws-stage').forEach(s=>s.classList.toggle('ws-hidden',Number(s.dataset.stage)!==n));document.querySelectorAll('.ws-step').forEach(b=>{const x=Number(b.dataset.wstep);b.classList.toggle('active',x===n);b.classList.toggle('done',x<n)});if(n===3)renderWorkshopPillars();if(n===4)renderWorkshopObjective();if(n===5)loadWorkshopDraft();if(n===6){evaluateWorkshop(false);renderWorkshopReport()}window.scrollTo({top:0,behavior:'smooth'})}
+function renderWorkshopPillars(){const el=document.getElementById('wsPillars');el.innerHTML=PILLARS.map(p=>`<article class="ws-pillar ${wsSelectedPillar===p.id?'active':''}" style="--pc:${p.color}" onclick="selectWorkshopPillar(${p.id})"><h4>${p.fa}</h4><small class="en">${p.en}</small><p>${p.desc}</p></article>`).join('');if(wsSelectedPillar)selectWorkshopPillar(wsSelectedPillar,false)}
+function selectWorkshopPillar(id,rerender=true){wsSelectedPillar=id;if(rerender)renderWorkshopPillars();const p=pBy(id),d=wsDept(),t=d?.pillars?.[id]||p.desc;document.getElementById('wsPillarExplain').innerHTML=`<strong>${p.fa} برای ${d?d.label:'حوزه شما'} یعنی چه؟</strong><p>${t}</p><p><b>Health KPIهای مرتبط:</b> ${p.kpis.map(k=>`<span class="en">${k}</span>`).join(' · ')}</p><div class="ws-mini-note">این بخش «ترجمه کارگاهی پیشنهادی» است؛ متن رسمی Pillar همان تعریف موجود در سند راهبردی است.</div>`}
+function fillWorkshopObjectiveSelect(){const s=document.getElementById('wsCompanyObjective');if(!s)return;s.innerHTML=OBJECTIVES.map(o=>`<option value="${o.id}">O${o.id} — ${o.title}</option>`).join('');s.value=String(wsDraft.objectiveId||1)}
+function renderWorkshopObjective(){const s=document.getElementById('wsCompanyObjective');if(s&&!s.options.length)fillWorkshopObjectiveSelect();const id=Number(s?.value||wsDraft.objectiveId||1);wsDraft.objectiveId=id;if(s)s.value=String(id);const o=oBy(id),p=pBy(o.pillar),d=wsDept();document.getElementById('wsObjectivePreview').innerHTML=`<div class="oid">O${o.id}</div><div><h4>${o.title}</h4><p>${p.fa} · <span class="en">${p.en}</span></p><p><b>Key Results موجود در سند:</b> ${o.krs.map((k,i)=>`KR${i+1}: <span class="en">${k}</span>`).join(' · ')}</p></div>`;document.getElementById('wsObjectiveDept').innerHTML=`<strong>ترجمه این Objective برای ${d?d.label:'حوزه شما'}</strong><p>${WS_OBJECTIVE_LENS[id]} ${d?`با تمرکز ویژه بر ${d.focus}.`:''}</p><div class="ws-mini-note">این تفسیر برای تسهیل کارگاه است و جای متن رسمی Objective را نمی‌گیرد.</div>`;document.getElementById('wsAlignedText').textContent=`O${o.id} — ${o.title}`;saveWorkshopDraft()}
+function saveWorkshopDraft(){if(document.getElementById('wsCompanyObjective'))wsDraft.objectiveId=Number(document.getElementById('wsCompanyObjective').value||wsDraft.objectiveId||1);if(document.getElementById('wsTeamObjective'))wsDraft.teamObjective=document.getElementById('wsTeamObjective').value.trim();for(let i=1;i<=3;i++){const k=document.getElementById('wsKR'+i),kp=document.getElementById('wsKRP'+i),it=document.getElementById('wsIN'+i),ip=document.getElementById('wsINP'+i);if(k)wsDraft.krs[i-1]=k.value.trim();if(kp)wsDraft.krp[i-1]=Number(kp.value);if(it)wsDraft.initiatives[i-1]=it.value.trim();if(ip)wsDraft.inp[i-1]=Number(ip.value)}if(document.getElementById('wsTimeframe'))wsDraft.timeframe=document.getElementById('wsTimeframe').value;storageSet('kish-workshop-draft',JSON.stringify(wsDraft));return wsDraft}
+function loadWorkshopDraft(){fillWorkshopObjectiveSelect();renderWorkshopObjective();document.getElementById('wsTeamTitle').textContent=(wsDept()?.label||'TEAM')+(wsProfile.subunit?' · '+wsProfile.subunit:'')+' — TEAM OKR';document.getElementById('wsTeamObjective').value=wsDraft.teamObjective||'';for(let i=1;i<=3;i++){document.getElementById('wsKR'+i).value=wsDraft.krs[i-1]||'';document.getElementById('wsKRP'+i).value=wsDraft.krp[i-1]||0;document.getElementById('wsIN'+i).value=wsDraft.initiatives[i-1]||'';document.getElementById('wsINP'+i).value=wsDraft.inp[i-1]||0;document.getElementById('wsINP'+i+'V').textContent=fa(wsDraft.inp[i-1]||0)+'٪'}document.getElementById('wsTimeframe').value=wsDraft.timeframe||'فصل جاری';recalcWorkshopProgress()}
+function recalcWorkshopProgress(){let vals=[];for(let i=1;i<=3;i++){const el=document.getElementById('wsKRP'+i);if(!el)continue;const v=Number(el.value||0);document.getElementById('wsKRP'+i+'V').textContent=fa(v)+'٪';const txt=document.getElementById('wsKR'+i).value.trim();if(txt)vals.push(v)}for(let i=1;i<=3;i++){const el=document.getElementById('wsINP'+i);if(el)document.getElementById('wsINP'+i+'V').textContent=fa(Number(el.value||0))+'٪'}const avg=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0;document.getElementById('wsObjProgress').textContent=fa(avg)+'٪';return avg}
+function evaluateWorkshop(scroll=true){saveWorkshopDraft();const obj=(wsDraft.teamObjective||'').trim(),krs=wsDraft.krs.filter(Boolean),ins=wsDraft.initiatives.filter(Boolean);let score=0,fb=[];if(wsDraft.objectiveId){score+=15;fb.push(['ok','هم‌راستایی با یک Company Objective مشخص ثبت شده است.'])}if(obj.length>=18){score+=12}else fb.push(['warn','Objective را روشن‌تر و کامل‌تر بنویسید؛ بهتر است یک جهت تغییر واضح داشته باشد.']);if(obj&&!/[0-9۰-۹٪%]/.test(obj)){score+=8}else if(obj)fb.push(['warn','Objective بهتر است کیفی باشد؛ عدد و Target را به KR منتقل کنید.']);if(krs.length>=2){score+=12}else fb.push(['bad','حداقل دو Key Result برای Objective تیمی بنویسید.']);const measurable=krs.filter(x=>/[0-9۰-۹٪%]/.test(x)).length;score+=Math.round(18*(measurable/Math.max(2,krs.length||2)));if(krs.length&&measurable<krs.length)fb.push(['warn','بعضی KRها Target عددی یا معیار قابل سنجش ندارند.']);else if(krs.length)fb.push(['ok','KRهای شما نشانه‌های سنجش‌پذیری دارند.']);const taskWords=/برگزاری|راه‌اندازی|ایجاد|طراحی|خرید|تهیه|برنامه‌ریزی|جلسه|آموزش|اجرای|پیاده‌سازی/;const krTasks=krs.filter(x=>taskWords.test(x)).length;if(krs.length&&krTasks===0){score+=10}else if(krTasks)fb.push(['warn','حداقل یک KR شبیه Activity/Initiative نوشته شده است. KR باید نتیجه را بسنجد، نه کار را.']);if(ins.length>=2){score+=12;fb.push(['ok','برای اثرگذاری بر KRها Initiative اجرایی تعریف شده است.'])}else fb.push(['warn','حداقل دو Initiative در کنترل مستقیم تیم تعریف کنید.']);const initAction=ins.filter(x=>taskWords.test(x)||x.length>14).length;score+=Math.round(8*(initAction/Math.max(2,ins.length||2)));if(wsDraft.timeframe){score+=5}if(wsProfile.dept){score+=5}score=Math.max(0,Math.min(100,score));wsDraft.score=score;wsDraft.feedback=fb;storageSet('kish-workshop-draft',JSON.stringify(wsDraft));const ring=document.getElementById('wsScoreRing');if(ring)ring.style.setProperty('--score',score);if(document.getElementById('wsScore'))document.getElementById('wsScore').textContent=fa(score);if(document.getElementById('wsScoreTitle'))document.getElementById('wsScoreTitle').textContent=score>=80?'ساختار OKR شما قوی است':score>=60?'ساختار قابل قبول است؛ چند اصلاح لازم دارد':'ساختار هنوز نیاز به بازطراحی دارد';if(document.getElementById('wsFeedback'))document.getElementById('wsFeedback').innerHTML=fb.map(x=>`<div class="fb ${x[0]}">${x[1]}</div>`).join('');renderWorkshopReport();if(scroll)window.scrollTo({top:0,behavior:'smooth'});return score}
+function renderWorkshopReport(){const el=document.getElementById('wsReport');if(!el)return;const o=oBy(wsDraft.objectiveId||1),avg=(()=>{const vals=wsDraft.krs.map((k,i)=>k?Number(wsDraft.krp[i]||0):null).filter(x=>x!==null);return vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0})();el.innerHTML=`<b>شرکت‌کننده:</b> ${esc(wsProfile.name||'ثبت نشده')}<br><b>حوزه:</b> ${esc(wsDept()?.label||'—')}${wsProfile.subunit?' / '+esc(wsProfile.subunit):''}<br><b>Company Objective:</b> O${o.id} — ${esc(o.title)}<br><b>Team Objective:</b> ${esc(wsDraft.teamObjective||'—')}<br><b>پیشرفت Objective:</b> ${fa(avg)}٪ (میانگین KRهای دارای متن)<br><b>Key Results:</b><br>${wsDraft.krs.map((x,i)=>x?`• KR${i+1}: ${esc(x)} — ${fa(wsDraft.krp[i]||0)}٪<br>`:'').join('')}<b>Initiatives:</b><br>${wsDraft.initiatives.map((x,i)=>x?`• ${esc(x)} — ${fa(wsDraft.inp[i]||0)}٪<br>`:'').join('')}<b>Cadence/Timeframe:</b> ${esc(wsDraft.timeframe||'—')}<br><b>امتیاز ساختاری:</b> ${fa(wsDraft.score??0)} از ۱۰۰`}
+function downloadWorkshop(){saveWorkshopDraft();const o=oBy(wsDraft.objectiveId||1),payload={workshop:'Kish Strategy Execution Workshop',exportedAt:new Date().toISOString(),profile:{...wsProfile,department:wsDept()?.label||''},companyObjective:{id:o.id,title:o.title,pillar:pBy(o.pillar).fa},teamOKR:{objective:wsDraft.teamObjective,keyResults:wsDraft.krs.map((text,i)=>({text,progress:wsDraft.krp[i]})),initiatives:wsDraft.initiatives.map((text,i)=>({text,progress:wsDraft.inp[i]})),timeframe:wsDraft.timeframe},evaluation:{score:wsDraft.score,feedback:wsDraft.feedback}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kish-workshop-'+(wsDept()?.label||'participant')+'.json';a.click();URL.revokeObjectURL(a.href)}
+function resetWorkshop(){if(!confirm('اطلاعات کارگاه روی این دستگاه پاک شود؟'))return;wsProfile={name:'',role:'',dept:'',subunit:''};wsDraft={objectiveId:1,teamObjective:'',krs:['','',''],krp:[0,0,0],initiatives:['','',''],inp:[0,0,0],timeframe:'فصل جاری',score:null,feedback:[]};storageSet('kish-workshop-profile',JSON.stringify(wsProfile));storageSet('kish-workshop-draft',JSON.stringify(wsDraft));wsSelectedPillar=null;renderWorkshopProfile();renderWorkshopFoundation();showWorkshopStep(1)}
+function initWorkshop(){renderWorkshopProfile();renderWorkshopFoundation();fillWorkshopObjectiveSelect();renderWorkshopPillars();document.querySelectorAll('#wsDeptChoices button').forEach(b=>b.addEventListener('click',()=>selectWorkshopDept(b.dataset.dept)));document.querySelectorAll('.ws-step').forEach(b=>b.addEventListener('click',()=>showWorkshopStep(Number(b.dataset.wstep))));document.getElementById('wsTimeframe')?.addEventListener('change',saveWorkshopDraft)}
 function renderAll(){renderCascade();renderBoard();renderKPIs();renderTimeline();renderDashboard();renderVitals()}
-const titles={home:'خانه مدیریتی',strategy:'نقشه و اهداف راهبردی',kpis:'علائم حیاتی سازمان',checkin:'ثبت پیشرفت',dashboard:'داشبورد مدیرعامل'};
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('pageTitle').textContent=titles[id];if(id==='kpis')renderKPIs();if(id==='checkin')renderTimeline();if(id==='dashboard')renderDashboard();window.scrollTo({top:0,behavior:'smooth'})}
-function exportData(){const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),checks,kpiData,owners},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kish-strategy-execution-data.json';a.click();URL.revokeObjectURL(a.href)}
+const titles={home:'خانه مدیریتی',workshop:'کارگاه تعاملی',strategy:'نقشه و اهداف راهبردی',kpis:'علائم حیاتی سازمان',checkin:'ثبت پیشرفت',dashboard:'داشبورد مدیرعامل'};
+function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('pageTitle').textContent=titles[id];if(id==='workshop'){initWorkshop();showWorkshopStep(wsProfile.dept?2:1)}if(id==='kpis')renderKPIs();if(id==='checkin')renderTimeline();if(id==='dashboard')renderDashboard();window.scrollTo({top:0,behavior:'smooth'})}
+function exportData(){const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),checks,kpiData,owners,workshop:{profile:wsProfile,draft:wsDraft}},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kish-strategy-execution-data.json';a.click();URL.revokeObjectURL(a.href)}
 document.getElementById('desktopNav').addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b)go(b.dataset.page)});document.getElementById('mobileNav').addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b)go(b.dataset.page)});document.getElementById('strategyTabs').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(b)setStrategy(b.dataset.view)});document.getElementById('searchObj').addEventListener('input',renderCascade);document.getElementById('filterPillar').addEventListener('change',renderCascade);document.getElementById('checkType').addEventListener('change',renderCheckSelect);document.getElementById('checkGoal').addEventListener('change',e=>document.getElementById('checkOwner').value=owners[e.target.value]||'');document.getElementById('checkProgress').addEventListener('input',e=>document.getElementById('rangeValue').textContent=fa(e.target.value)+'٪');
-renderMap();renderFilter();renderCheckSelect();renderInitiatives();renderAll();
+renderMap();renderFilter();renderCheckSelect();renderInitiatives();renderAll();initWorkshop();
 </script>
 </body></html>
