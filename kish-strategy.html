@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b2b47">
+<meta name="theme-color" content="#0d7584">
 <title>اتاق فرمان اجرای راهبرد | بنادر و فرودگاه‌های کیش</title>
+<link rel="icon" href="https://kishports.com/wp-content/uploads/2023/03/cropped-apple-icon-32x32.png">
 <style>
 :root{
  --navy:#082b46;--navy2:#0d3a5d;--navy3:#123f64;--blue:#3e78ff;--cyan:#27a9e1;--gold:#d9a42f;
@@ -99,6 +100,36 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
 @media(max-width:1020px){.admin-shell{grid-template-columns:1fr}.admin-rail{position:static}.admin-nav{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:650px){.admin-form{grid-template-columns:1fr}.admin-form .full{grid-column:auto}.admin-nav{grid-template-columns:1fr 1fr}.admin-actions .btn{flex:1 1 auto}.admin-card{padding:13px}}
 
+
+/* ===== KISH PORTS & AIRPORTS OFFICIAL BRAND SKIN ===== */
+:root{
+ --navy:#123b52;--navy2:#0c5668;--navy3:#087f8c;--blue:#0f8fa0;--cyan:#2ab7b3;--gold:#d8a727;
+ --bg:#f5f8f8;--card:#ffffff;--ink:#19333d;--muted:#647a82;--line:#dfe8e9;--soft:#f8fbfb;
+ --green:#24966f;--shadow:0 10px 28px rgba(20,74,86,.08)
+}
+body{background:linear-gradient(180deg,#f7faf9 0,#f4f8f8 100%)}
+.sidebar{background:#fff;color:var(--ink);border-left:1px solid var(--line);box-shadow:8px 0 30px rgba(19,77,88,.05);padding-top:16px}
+.brand{padding:0 8px 16px;border-bottom:1px solid var(--line)}
+.corp-logo{display:block;background:#fff;border:1px solid #edf2f2;border-radius:14px;padding:10px 12px;text-align:center;box-shadow:0 5px 16px rgba(18,76,87,.05)}
+.corp-logo img{display:block;width:100%;height:58px;object-fit:contain;object-position:center}
+.brand-product{padding:10px 3px 0}.brand-product strong{display:block;font-size:12px;line-height:1.75;color:var(--navy)}.brand-product small{display:block;font-size:8px;color:#7b9197;margin-top:1px;direction:ltr;text-align:right}
+.nav{margin-top:14px}.nav button{color:#526a72}.nav button:hover{background:#edf7f7;color:var(--navy2)}.nav button.active{background:linear-gradient(90deg,#e5f5f4,#f2f9f8);color:#0c6975;box-shadow:inset -3px 0 0 #20aeb0}.nav svg{color:#17969d}
+.side-note{border-top:1px solid var(--line);color:#6d8389}.side-note b{color:var(--navy)}.official-site-link{display:inline-block;margin-top:7px;color:#0b7e8c;text-decoration:none;font-weight:800}.official-site-link:hover{text-decoration:underline}
+.topbar{background:rgba(248,251,250,.94);border-bottom:1px solid #dfe8e9}.topbar h2{color:#173d4a}.topbar:after{content:"";position:absolute;right:0;left:0;bottom:-1px;height:2px;background:linear-gradient(90deg,transparent,#20adae 35%,#0d8294 65%,transparent);opacity:.34}
+.btn.primary{background:#0d7584;border-color:#0d7584}.btn.blue{background:#12929f;border-color:#12929f}.btn:hover{border-color:#aacdce}
+.notice{border-right-color:#19a6aa}.admin-badge{background:#e7f5f4;color:#0d707c}.admin-local-warning{border-right-color:#d8a727}
+.hero{background:
+ radial-gradient(circle at 17% 22%,rgba(57,194,190,.28),transparent 32%),
+ radial-gradient(circle at 83% 72%,rgba(32,133,153,.28),transparent 31%),
+ linear-gradient(125deg,#123b52 0%,#0b6070 48%,#07858f 100%)}
+.hero .eyebrow{color:#caeeee}.radar-line{background:linear-gradient(90deg,#75e6db,transparent)}.portdot{background:#62ded4;box-shadow:0 0 0 8px rgba(98,222,212,.13)}
+.corp-kicker{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 9px;margin-bottom:7px;font-size:8.5px;font-weight:800;color:#e4fbf8}.corp-kicker span{width:7px;height:7px;border-radius:50%;background:#69ddd2;box-shadow:0 0 0 4px rgba(105,221,210,.12)}
+.ultimate{background:linear-gradient(135deg,#153e53,#0a7080)}
+.view-tabs button.active{color:#0d7480}.pillar-card{box-shadow:0 5px 18px rgba(18,79,89,.035)}
+.workshop-entry{border-color:#d8e9e8;background:linear-gradient(135deg,#fff,#f5fbfa)}
+@media(max-width:850px){.corp-logo{padding:7px}.corp-logo img{height:44px}.brand-product{display:none}}
+@media(max-width:650px){.corp-kicker{font-size:8px}.hero{background:linear-gradient(135deg,#123b52,#0b6976 62%,#0d8c92)}.official-site-link{display:none}}
+
 </style>
 </head>
 <body>
@@ -115,7 +146,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
 </defs></svg>
 <div class="app">
 <aside class="sidebar">
- <div class="brand"><div class="brandrow"><div class="brandmark"><svg><use href="#i-plane"/></svg></div><div><h1>اتاق فرمان اجرای راهبرد<br>بنادر و فرودگاه‌های کیش</h1><small>Executive Strategy Cockpit</small></div></div></div>
+ <div class="brand"><a class="corp-logo" href="https://kishports.com/" target="_blank" rel="noopener" aria-label="وب‌سایت رسمی شرکت"><img src="https://kishports.com/wp-content/uploads/2023/02/kishports_main.svg" alt="شرکت توسعه و مدیریت بنادر و فرودگاه‌های کیش"></a><div class="brand-product"><strong>اتاق فرمان اجرای راهبرد</strong><small>Strategy Execution Cockpit</small></div></div>
  <nav class="nav" id="desktopNav">
   <button class="active" data-page="home"><svg><use href="#i-home"/></svg><span>خانه</span></button>
   <button data-page="strategy"><svg><use href="#i-map"/></svg><span>نقشه راهبرد</span></button>
@@ -123,14 +154,14 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
   <button data-page="workshop"><svg><use href="#i-target"/></svg><span>کارگاه</span></button>
   <button data-page="dashboard"><svg><use href="#i-chart"/></svg><span>داشبورد مدیرعامل</span></button>
  </nav>
- <div class="side-note"><b>مبنای محتوا:</b> سند راهبردی تحول و پیشرفت شرکت<br>منطق اجرا: Perdoo-style OKR & KPI<br>افق: ۱۴۰۴–۱۴۰۶</div>
+ <div class="side-note"><b>مبنای محتوا:</b> سند راهبردی تحول و پیشرفت شرکت<br>منطق اجرا: Perdoo-style OKR & KPI<br>افق: ۱۴۰۴–۱۴۰۶<br><a class="official-site-link" href="https://kishports.com/" target="_blank" rel="noopener">وب‌سایت رسمی شرکت ↗</a></div>
 </aside>
 <main class="main">
 <header class="topbar"><div><h2 id="pageTitle">خانه مدیریتی</h2><div class="top-sub">راهبرد را ببین، پیشرفت را ثبت کن، تصمیم بگیر.</div></div><div class="top-actions"><button class="btn admin-only" id="adminEntryBtn" onclick="go('admin')">✎ ویرایش محتوا</button><button class="btn hide-mobile" onclick="exportData()">خروجی داده</button><button class="btn primary" onclick="go('checkin')">+ ثبت پیشرفت</button></div></header>
 <div class="content">
 <section class="page active" id="home">
  <div class="hero">
-  <div><div class="eyebrow">EXECUTIVE STRATEGY COCKPIT</div><h3>از راهبرد تا اقدام؛ وضعیت شرکت را در یک نگاه ببینید.</h3><p>نسخه ساده و قابل‌کلیک سند راهبردی: مقصد، ۶ ستون راهبردی، ۱۳ هدف، نتایج کلیدی و وضعیت اجرا.</p><div class="hero-actions"><button class="btn primary" onclick="go('strategy')">مشاهده نقشه راهبرد</button><button class="btn" onclick="go('kpis')">علائم حیاتی</button></div></div>
+  <div><div class="corp-kicker"><span></span> سامانه داخلی اجرای راهبرد</div><div class="eyebrow">EXECUTIVE STRATEGY COCKPIT</div><h3>از راهبرد تا اقدام؛ وضعیت شرکت را در یک نگاه ببینید.</h3><p>نسخه ساده و قابل‌کلیک سند راهبردی: مقصد، ۶ ستون راهبردی، ۱۳ هدف، نتایج کلیدی و وضعیت اجرا.</p><div class="hero-actions"><button class="btn primary" onclick="go('strategy')">مشاهده نقشه راهبرد</button><button class="btn" onclick="go('kpis')">علائم حیاتی</button></div></div>
   <div class="hero-visual"><div class="radar"><div class="radar-line"></div></div><svg class="plane"><use href="#i-plane"/></svg><span class="portdot d1"></span><span class="portdot d2"></span><span class="portdot d3"></span></div>
  </div>
  <div class="workshop-entry"><div><h4>🎓 حالت کارگاه تعاملی</h4><p>بر اساس الگوی Excel/Perdoo: ابتدا حوزه خود را انتخاب کنید، مفاهیم را مرور کنید، Company OKR را به Team OKR ترجمه کنید و خروجی شخصی بگیرید.</p></div><button class="btn blue" onclick="go('workshop')">ورود به کارگاه</button></div>
