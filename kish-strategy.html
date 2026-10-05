@@ -77,6 +77,23 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
 @media(max-width:1020px){.ws-shell{grid-template-columns:1fr}.ws-rail{position:static}.ws-steps{grid-template-columns:repeat(3,1fr)}.ws-profile{margin-bottom:8px}.ws-grid,.ws-pillars{grid-template-columns:1fr 1fr}.bottom-nav{grid-template-columns:repeat(6,1fr)}}
 @media(max-width:650px){.workshop-entry{display:block}.workshop-entry .btn{margin-top:10px;width:100%}.ws-steps{grid-template-columns:1fr 1fr}.ws-grid,.ws-grid.two,.ws-pillars,.ws-form{grid-template-columns:1fr}.ws-form .full{grid-column:auto}.okr-row{grid-template-columns:1fr}.okr-progress{margin-top:-4px}.ws-score{grid-template-columns:1fr;text-align:center}.score-ring{margin:auto}}
 
+
+/* ===== ADMIN / EDIT MODE ===== */
+.admin-only{display:none}.admin-only.show{display:inline-flex}
+.admin-shell{display:grid;grid-template-columns:230px minmax(0,1fr);gap:14px;align-items:start}
+.admin-rail{position:sticky;top:88px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:0 4px 18px rgba(20,46,70,.04)}
+.admin-rail h4{margin:0 0 8px;font-size:11px}.admin-nav{display:grid;gap:5px}.admin-nav button{border:0;background:#f7f9fc;color:#657082;border-radius:10px;padding:9px 10px;text-align:right;font-size:9px;font-weight:800}.admin-nav button.active{background:#eaf2ff;color:#265ec9}
+.admin-main{min-width:0}.admin-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}.admin-card h3{font-size:15px;margin:0 0 5px}.admin-card>p{font-size:9px;color:var(--muted);line-height:1.8;margin:0 0 12px}
+.admin-form{display:grid;grid-template-columns:1fr 1fr;gap:9px}.admin-form .full{grid-column:1/-1}.admin-field{display:grid;gap:5px}.admin-field label{font-size:8.5px;color:#596576;font-weight:800}.admin-field .input,.admin-field .select,.admin-field .textarea{width:100%}.admin-field .textarea{min-height:96px}
+.admin-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.btn.danger{background:#fff3f3;border-color:#f0caca;color:#b64d4d}.btn.green{background:#16885c;border-color:#16885c;color:#fff}
+.admin-status{border-radius:11px;padding:9px 11px;font-size:8.5px;line-height:1.8;background:#f2f7ff;color:#45617f;margin-top:9px}.admin-status.ok{background:#edf9f3;color:#247a56}.admin-status.warn{background:#fff7e9;color:#8c641c}
+.admin-list{display:grid;gap:6px;margin-top:9px}.admin-item{display:flex;justify-content:space-between;gap:8px;align-items:center;border:1px solid var(--line);border-radius:11px;padding:9px 10px;background:#fbfcfe}.admin-item strong{font-size:9px}.admin-item small{font-size:7.8px;color:var(--muted)}
+.admin-kpi-help{font-size:8px;color:#7c8796;line-height:1.8;margin-top:5px}.admin-preview{border:1px dashed #cfd8e6;background:#fafcff;border-radius:13px;padding:12px;font-size:9px;line-height:1.9;color:#536074}
+.admin-badge{display:inline-block;background:#edf3ff;color:#2f67d0;border-radius:8px;padding:4px 7px;font-size:8px;font-weight:900;margin-left:4px}
+.admin-local-warning{background:#fffaf0;border:1px solid #f1dfae;border-right:4px solid #d9a42f;border-radius:13px;padding:11px 13px;font-size:9px;line-height:1.9;color:#6d5a2d;margin-bottom:12px}
+@media(max-width:1020px){.admin-shell{grid-template-columns:1fr}.admin-rail{position:static}.admin-nav{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){.admin-form{grid-template-columns:1fr}.admin-form .full{grid-column:auto}.admin-nav{grid-template-columns:1fr 1fr}.admin-actions .btn{flex:1 1 auto}.admin-card{padding:13px}}
+
 </style>
 </head>
 <body>
@@ -105,7 +122,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
  <div class="side-note"><b>مبنای محتوا:</b> سند راهبردی تحول و پیشرفت شرکت<br>منطق اجرا: Perdoo-style OKR & KPI<br>افق: ۱۴۰۴–۱۴۰۶</div>
 </aside>
 <main class="main">
-<header class="topbar"><div><h2 id="pageTitle">خانه مدیریتی</h2><div class="top-sub">راهبرد را ببین، علائم حیاتی را پایش کن، و به‌موقع تصمیم بگیر.</div></div><div class="top-actions"><button class="btn hide-mobile" onclick="exportData()">خروجی داده</button><button class="btn primary" onclick="go('checkin')">+ ثبت پیشرفت</button></div></header>
+<header class="topbar"><div><h2 id="pageTitle">خانه مدیریتی</h2><div class="top-sub">راهبرد را ببین، علائم حیاتی را پایش کن، و به‌موقع تصمیم بگیر.</div></div><div class="top-actions"><button class="btn admin-only" id="adminEntryBtn" onclick="go('admin')">✎ ویرایش محتوا</button><button class="btn hide-mobile" onclick="exportData()">خروجی داده</button><button class="btn primary" onclick="go('checkin')">+ ثبت پیشرفت</button></div></header>
 <div class="content">
 <section class="page active" id="home">
  <div class="hero">
@@ -122,7 +139,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
 <section class="page" id="strategy">
  <div class="notice"><b>منطق این بخش مطابق معماری Perdoo است:</b> Ultimate Goal → Strategic Pillars → Objectives → Key Results → Initiatives. برای کاهش پیچیدگی، فقط نماهایی نگه داشته شده‌اند که برای استقرار اولیه در شرکت مفیدند.</div>
  <div class="view-tabs" id="strategyTabs"><button class="active" data-view="map">Map</button><button data-view="cascade">Cascade</button><button data-view="board">Board</button><button data-view="initiatives">Initiatives</button></div>
- <div id="mapView"><div class="map-shell"><div class="ultimate"><div class="eyebrow">ULTIMATE GOAL · NORTH STAR</div><h3>تبدیل‌شدن به سازمانی پیشرو، ایمن و نوآور در مدیریت حمل‌ونقل هوایی و دریایی که به‌عنوان دروازه بین‌المللی جزیره کیش، الگویی برای توسعه پایدار، سرمایه‌گذاری راهبردی و ارتقاء برند ملی و منطقه‌ای ایران باشد.</h3></div><div class="pillars-line" id="pillarsLine"></div></div></div>
+ <div id="mapView"><div class="map-shell"><div class="ultimate"><div class="eyebrow">ULTIMATE GOAL · NORTH STAR</div><h3 id="northStarText">تبدیل‌شدن به سازمانی پیشرو، ایمن و نوآور در مدیریت حمل‌ونقل هوایی و دریایی که به‌عنوان دروازه بین‌المللی جزیره کیش، الگویی برای توسعه پایدار، سرمایه‌گذاری راهبردی و ارتقاء برند ملی و منطقه‌ای ایران باشد.</h3></div><div class="pillars-line" id="pillarsLine"></div></div></div>
  <div id="cascadeView" style="display:none"><div class="toolbar"><input class="input search" id="searchObj" placeholder="جست‌وجو در هدف یا KR..."><select class="select" id="filterPillar"><option value="">همه ستون‌ها</option></select></div><div class="cascade" id="cascade"></div></div>
  <div id="boardView" style="display:none"><div class="board" id="board"></div></div>
  <div id="initiativeView" style="display:none"><div class="initiative-grid" id="initiativeGrid"></div></div>
@@ -179,11 +196,11 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
     <div class="ws-card">
      <div class="section-head"><div><h3>۲. مبانی راهبرد شرکت</h3><p>قبل از OKR باید بدانیم سازمان چرا وجود دارد، کجا می‌خواهد برسد و ستاره شمالی آن چیست.</p></div></div>
      <div class="ws-grid">
-      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('mission')">ⓘ</button><div class="label">MISSION · مأموریت</div><h4>امروز چه مسئولیتی داریم؟</h4><p>مدیریت و توسعه ایمن، کارآمد و نوآورانه زیرساخت‌ها و خدمات حمل‌ونقل هوایی و دریایی کیش؛ با کیفیت، استانداردهای بین‌المللی، فناوری، سرمایه انسانی و مدل‌های درآمدی پایدار.</p></article>
-      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('vision')">ⓘ</button><div class="label">VISION · چشم‌انداز ۱۴۱۰</div><h4>در آینده می‌خواهیم چه جایگاهی داشته باشیم؟</h4><p>حفظ جایگاه برتر ملی و گسترش اثربخشی، نوآوری و اعتبار در سطح منطقه‌ای؛ تبدیل‌شدن به سازمانی خوشنام، پیشرو و قابل اتکا در حمل‌ونقل و لجستیک هوایی و دریایی.</p></article>
-      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('northstar')">ⓘ</button><div class="label">ULTIMATE GOAL · NORTH STAR</div><h4>مقصد الهام‌بخش و بلندمدت</h4><p>تبدیل‌شدن به سازمانی پیشرو، ایمن و نوآور که به‌عنوان دروازه بین‌المللی کیش، الگویی برای توسعه پایدار، سرمایه‌گذاری راهبردی و ارتقاء برند ملی و منطقه‌ای ایران باشد.</p></article>
-      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('values')">ⓘ</button><div class="label">CORE VALUES · ارزش‌ها</div><h4>قواعد حرکت ما</h4><p>کیفیت و بهره‌وری؛ مشتری‌مداری و پاسخگویی؛ نوآوری و تحول دیجیتال؛ توسعه پایدار؛ همکاری راهبردی؛ حرفه‌ای‌گرایی، اخلاق و یادگیری مستمر.</p></article>
-      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('cadence')">ⓘ</button><div class="label">CADENCE · ریتم اجرا</div><h4>چه زمانی هدف می‌گذاریم و مرور می‌کنیم؟</h4><p>در فایل Perdoo، OKRهای راهبردی معمولاً سالانه و OKRهای تاکتیکی تیمی معمولاً فصلی هستند؛ Check-inها نیز به‌طور منظم برای به‌روزرسانی پیشرفت انجام می‌شوند.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('mission')">ⓘ</button><div class="label">MISSION · مأموریت</div><h4>امروز چه مسئولیتی داریم؟</h4><p id="foundationMissionSummary">مدیریت و توسعه ایمن، کارآمد و نوآورانه زیرساخت‌ها و خدمات حمل‌ونقل هوایی و دریایی کیش؛ با کیفیت، استانداردهای بین‌المللی، فناوری، سرمایه انسانی و مدل‌های درآمدی پایدار.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('vision')">ⓘ</button><div class="label">VISION · چشم‌انداز ۱۴۱۰</div><h4>در آینده می‌خواهیم چه جایگاهی داشته باشیم؟</h4><p id="foundationVisionSummary">حفظ جایگاه برتر ملی و گسترش اثربخشی، نوآوری و اعتبار در سطح منطقه‌ای؛ تبدیل‌شدن به سازمانی خوشنام، پیشرو و قابل اتکا در حمل‌ونقل و لجستیک هوایی و دریایی.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('northstar')">ⓘ</button><div class="label">ULTIMATE GOAL · NORTH STAR</div><h4>مقصد الهام‌بخش و بلندمدت</h4><p id="foundationNorthstarSummary">تبدیل‌شدن به سازمانی پیشرو، ایمن و نوآور که به‌عنوان دروازه بین‌المللی کیش، الگویی برای توسعه پایدار، سرمایه‌گذاری راهبردی و ارتقاء برند ملی و منطقه‌ای ایران باشد.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('values')">ⓘ</button><div class="label">CORE VALUES · ارزش‌ها</div><h4>قواعد حرکت ما</h4><p id="foundationValuesSummary">کیفیت و بهره‌وری؛ مشتری‌مداری و پاسخگویی؛ نوآوری و تحول دیجیتال؛ توسعه پایدار؛ همکاری راهبردی؛ حرفه‌ای‌گرایی، اخلاق و یادگیری مستمر.</p></article>
+      <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('cadence')">ⓘ</button><div class="label">CADENCE · ریتم اجرا</div><h4>چه زمانی هدف می‌گذاریم و مرور می‌کنیم؟</h4><p id="foundationCadenceSummary">در فایل Perdoo، OKRهای راهبردی معمولاً سالانه و OKRهای تاکتیکی تیمی معمولاً فصلی هستند؛ Check-inها نیز به‌طور منظم برای به‌روزرسانی پیشرفت انجام می‌شوند.</p></article>
       <article class="ws-foundation"><button class="info-btn" onclick="openGlossary('alignment')">ⓘ</button><div class="label">ALIGNMENT · هم‌راستایی</div><h4>هر هدف تیمی به چه هدف بالاتری خدمت می‌کند؟</h4><p>در Team OKRs فایل اکسل، هر Objective تیمی یک «Aligned to» دارد. در این کارگاه هم شما باید هدف حوزه خود را به یکی از ۱۳ هدف شرکت وصل کنید.</p></article>
      </div>
      <div class="ws-callout green" id="wsFoundationDept"></div>
@@ -247,6 +264,84 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
  </div>
 </section>
 
+
+<section class="page" id="admin">
+ <div class="admin-local-warning"><b>ویرایشگر مدیر:</b> تغییرات این صفحه ابتدا فقط در همین مرورگر ذخیره می‌شوند. برای اینکه تغییرات برای همه کاربران سایت دیده شود، پس از پایان ویرایش روی <b>«ساخت فایل انتشار»</b> بزنید و فایل جدید <span class="en">kish-strategy.html</span> را روی GitHub جایگزین کنید. این حالت «امنیت ورود مدیر» محسوب نمی‌شود؛ برای مدیریت مرکزی و واقعی باید Backend و Login اضافه شود.</div>
+ <div class="admin-shell">
+  <aside class="admin-rail">
+   <h4>ویرایش ساختار راهبرد</h4>
+   <div class="admin-nav" id="adminNav">
+    <button class="active" data-admin-section="foundation">مبانی و مفاهیم</button>
+    <button data-admin-section="pillars">Pillar و Health KPI</button>
+    <button data-admin-section="objectives">Objective و KR</button>
+    <button data-admin-section="initiatives">Initiatives</button>
+    <button data-admin-section="publish">ذخیره و انتشار</button>
+   </div>
+  </aside>
+  <div class="admin-main">
+   <section class="admin-card admin-section" data-admin-panel="foundation">
+    <h3>مبانی راهبرد و راهنمای آموزشی</h3><p>North Star و متن کارت‌های آموزشی را اینجا عوض کنید. بخش «راهنمای اصطلاح» نیز همان متنی است که با کلیک روی ⓘ به کاربر نشان داده می‌شود.</p>
+    <div class="admin-form">
+     <div class="admin-field full"><label>Ultimate Goal / North Star</label><textarea class="textarea" id="adminNorthStar"></textarea></div>
+     <div class="admin-field"><label>خلاصه Mission در کارگاه</label><textarea class="textarea" id="adminMissionSummary"></textarea></div>
+     <div class="admin-field"><label>خلاصه Vision در کارگاه</label><textarea class="textarea" id="adminVisionSummary"></textarea></div>
+     <div class="admin-field"><label>خلاصه North Star در کارگاه</label><textarea class="textarea" id="adminNorthstarSummary"></textarea></div>
+     <div class="admin-field"><label>خلاصه Values در کارگاه</label><textarea class="textarea" id="adminValuesSummary"></textarea></div>
+     <div class="admin-field full"><label>خلاصه Cadence در کارگاه</label><textarea class="textarea" id="adminCadenceSummary"></textarea></div>
+     <div class="admin-field"><label>اصطلاح آموزشی</label><select class="select" id="adminTermSelect" onchange="loadAdminTerm()"></select></div>
+     <div class="admin-field"><label>عنوان فارسی</label><input class="input" id="adminTermTitle"></div>
+     <div class="admin-field full"><label>توضیحی که در باکس ⓘ نمایش داده می‌شود</label><textarea class="textarea" id="adminTermText"></textarea></div>
+     <div class="admin-field full"><label>مثال / کاربرد</label><textarea class="textarea" id="adminTermExample"></textarea></div>
+    </div>
+    <div class="admin-actions"><button class="btn blue" onclick="saveAdminFoundation()">ذخیره این بخش</button></div>
+   </section>
+
+   <section class="admin-card admin-section" data-admin-panel="pillars" style="display:none">
+    <h3>Strategic Pillar و Health KPI</h3><p>عنوان، توضیح و «شاخص‌های سلامت» هر Pillar را ویرایش کنید. KPIها را هر کدام در یک خط بنویسید.</p>
+    <div class="admin-form">
+     <div class="admin-field"><label>Pillar</label><select class="select" id="adminPillarSelect" onchange="loadAdminPillar()"></select></div>
+     <div class="admin-field"><label>عنوان فارسی</label><input class="input" id="adminPillarFa"></div>
+     <div class="admin-field"><label>عنوان انگلیسی</label><input class="input" id="adminPillarEn" dir="ltr"></div>
+     <div class="admin-field"><label>رنگ</label><input class="input" id="adminPillarColor" type="color" style="height:42px;padding:4px"></div>
+     <div class="admin-field full"><label>تعریف / توضیح Pillar</label><textarea class="textarea" id="adminPillarDesc"></textarea></div>
+     <div class="admin-field full"><label>Health KPIs — هر KPI در یک خط</label><textarea class="textarea" id="adminPillarKpis" dir="ltr"></textarea><div class="admin-kpi-help">این قسمت فقط Health KPIهای Pillar است؛ KRهای Objective را در بخش بعدی ویرایش کنید.</div></div>
+    </div>
+    <div class="admin-actions"><button class="btn blue" onclick="saveAdminPillar()">ذخیره Pillar</button><button class="btn" onclick="addAdminPillar()">+ Pillar جدید</button><button class="btn danger" onclick="deleteAdminPillar()">حذف Pillar</button></div>
+   </section>
+
+   <section class="admin-card admin-section" data-admin-panel="objectives" style="display:none">
+    <h3>Objective و Key Results</h3><p>اینجا دقیقاً همان جایی است که می‌توانید منطق Objective → KR را تغییر دهید؛ Objective را به Pillar دیگری وصل کنید، عنوان آن را اصلاح کنید، یا KRها را اضافه/حذف کنید.</p>
+    <div class="admin-form">
+     <div class="admin-field"><label>Objective</label><select class="select" id="adminObjectiveSelect" onchange="loadAdminObjective()"></select></div>
+     <div class="admin-field"><label>Strategic Pillar</label><select class="select" id="adminObjectivePillar"></select></div>
+     <div class="admin-field full"><label>عنوان Objective</label><textarea class="textarea" id="adminObjectiveTitle"></textarea></div>
+     <div class="admin-field full"><label>Key Results — هر KR در یک خط</label><textarea class="textarea" id="adminObjectiveKrs" dir="ltr"></textarea></div>
+    </div>
+    <div class="admin-actions"><button class="btn blue" onclick="saveAdminObjective()">ذخیره Objective</button><button class="btn" onclick="addAdminObjective()">+ Objective جدید</button><button class="btn danger" onclick="deleteAdminObjective()">حذف Objective</button></div>
+    <div class="admin-status warn">اگر عنوان KR یا KPI را عوض کنید، داده‌های قبلی ثبت‌شده با نام قدیمی ممکن است دیگر به مورد جدید متصل نباشند.</div>
+   </section>
+
+   <section class="admin-card admin-section" data-admin-panel="initiatives" style="display:none">
+    <h3>Initiatives</h3><p>اقدامات اجرایی را به Objective مربوط متصل کنید. این‌ها «فعالیت/پروژه» هستند و با KR تفاوت دارند.</p>
+    <div id="adminInitiativeList" class="admin-list"></div>
+    <div class="admin-form" style="margin-top:12px">
+     <div class="admin-field full"><label>عنوان Initiative</label><input class="input" id="adminInitTitle"></div>
+     <div class="admin-field"><label>Objective مرتبط</label><select class="select" id="adminInitGoal"></select></div>
+     <div class="admin-field"><label>حوزه / واحد</label><input class="input" id="adminInitUnit"></div>
+    </div>
+    <div class="admin-actions"><button class="btn blue" onclick="addAdminInitiative()">+ افزودن Initiative</button></div>
+   </section>
+
+   <section class="admin-card admin-section" data-admin-panel="publish" style="display:none">
+    <h3>ذخیره و انتشار</h3><p>نسخه فعلی سایت Static است. بنابراین «ذخیره محلی» تغییر را فقط روی همین مرورگر نگه می‌دارد؛ «ساخت فایل انتشار» همان تغییرات را داخل خود HTML جاسازی می‌کند تا پس از آپلود روی GitHub برای همه دیده شود.</p>
+    <div class="admin-preview" id="adminSummary"></div>
+    <div class="admin-actions"><button class="btn green" onclick="saveAdminConfig(true)">ذخیره محلی همه تغییرات</button><button class="btn blue" onclick="publishAdminHtml()">⬇ ساخت فایل انتشار</button><button class="btn" onclick="exportAdminConfig()">خروجی تنظیمات JSON</button><label class="btn" style="cursor:pointer">ورود تنظیمات JSON<input type="file" id="adminImportFile" accept="application/json,.json" style="display:none" onchange="importAdminConfig(this.files[0])"></label><button class="btn danger" onclick="resetAdminConfig()">بازگشت به نسخه اصلی</button></div>
+    <div class="admin-status" id="adminSaveStatus">هنوز تغییری در این جلسه ذخیره نشده است.</div>
+   </section>
+  </div>
+ </div>
+</section>
+
 <section class="page" id="dashboard">
  <div class="section-head"><div><h3>داشبورد مدیرعامل</h3><p>فقط آنچه برای پیگیری و تصمیم لازم است.</p></div></div>
  <div class="quickstats"><div class="stat"><div class="k">۱۳</div><div class="l">اهداف راهبردی</div><div class="mini">Company Objectives</div></div><div class="stat"><div class="k">۱۸</div><div class="l">Health KPI</div><div class="mini">Vital metrics</div></div><div class="stat"><div class="k" id="statUpdated">۰</div><div class="l">هدف دارای داده</div><div class="mini">Updated</div></div><div class="stat"><div class="k" id="statRisk">۰</div><div class="l">نیازمند توجه</div><div class="mini">Risk / Off track</div></div></div>
@@ -264,6 +359,8 @@ button,input,select,textarea{font:inherit}button{cursor:pointer}.en{direction:lt
   <div class="glossary-example"><b>مثال / کاربرد در کارگاه</b><div id="glossaryExample"></div></div>
  </div>
 </div>
+
+<script id="embeddedAdminConfig" type="application/json">{}</script>
 
 <script>
 const PILLARS=[
@@ -436,11 +533,63 @@ function renderWorkshopReport(){const el=document.getElementById('wsReport');if(
 function downloadWorkshop(){saveWorkshopDraft();const o=oBy(wsDraft.objectiveId||1),payload={workshop:'Kish Strategy Execution Workshop',exportedAt:new Date().toISOString(),profile:{...wsProfile,department:wsDept()?.label||''},companyObjective:{id:o.id,title:o.title,pillar:pBy(o.pillar).fa},teamOKR:{objective:wsDraft.teamObjective,keyResults:wsDraft.krs.map((text,i)=>({text,progress:wsDraft.krp[i]})),initiatives:wsDraft.initiatives.map((text,i)=>({text,progress:wsDraft.inp[i]})),timeframe:wsDraft.timeframe},evaluation:{score:wsDraft.score,feedback:wsDraft.feedback}};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kish-workshop-'+(wsDept()?.label||'participant')+'.json';a.click();URL.revokeObjectURL(a.href)}
 function resetWorkshop(){if(!confirm('اطلاعات کارگاه روی این دستگاه پاک شود؟'))return;wsProfile={name:'',role:'',dept:'',subunit:''};wsDraft={objectiveId:1,teamObjective:'',krs:['','',''],krp:[0,0,0],initiatives:['','',''],inp:[0,0,0],timeframe:'فصل جاری',score:null,feedback:[]};storageSet('kish-workshop-profile',JSON.stringify(wsProfile));storageSet('kish-workshop-draft',JSON.stringify(wsDraft));wsSelectedPillar=null;renderWorkshopProfile();renderWorkshopFoundation();showWorkshopStep(1)}
 function initWorkshop(){renderWorkshopProfile();renderWorkshopFoundation();fillWorkshopObjectiveSelect();renderWorkshopPillars();document.querySelectorAll('#wsDeptChoices button').forEach(b=>b.addEventListener('click',()=>selectWorkshopDept(b.dataset.dept)));document.querySelectorAll('.ws-step').forEach(b=>b.addEventListener('click',()=>showWorkshopStep(Number(b.dataset.wstep))));document.getElementById('wsTimeframe')?.addEventListener('change',saveWorkshopDraft)}
+
+/* ===== ADMIN / EDIT MODE LOGIC ===== */
+const ADMIN_STORAGE_KEY='kish-admin-config-v1';
+const ADMIN_FOUNDATION_DEFAULT={
+ northStar:(document.getElementById('northStarText')?.textContent||'').trim(),
+ mission:(document.getElementById('foundationMissionSummary')?.textContent||'').trim(),
+ vision:(document.getElementById('foundationVisionSummary')?.textContent||'').trim(),
+ northstarSummary:(document.getElementById('foundationNorthstarSummary')?.textContent||'').trim(),
+ values:(document.getElementById('foundationValuesSummary')?.textContent||'').trim(),
+ cadence:(document.getElementById('foundationCadenceSummary')?.textContent||'').trim()
+};
+let ADMIN_FOUNDATION={...ADMIN_FOUNDATION_DEFAULT};
+const adminDeep=x=>JSON.parse(JSON.stringify(x));
+function replaceArray(target,items){target.splice(0,target.length,...adminDeep(items||[]))}
+function replaceObject(target,src){Object.keys(target).forEach(k=>delete target[k]);Object.assign(target,adminDeep(src||{}))}
+function embeddedAdminConfig(){try{return JSON.parse(document.getElementById('embeddedAdminConfig')?.textContent||'{}')}catch(e){return {}}}
+function currentAdminConfig(){return {version:1,foundation:{...ADMIN_FOUNDATION},pillars:adminDeep(PILLARS),objectives:adminDeep(OBJECTIVES),initiatives:adminDeep(INITIATIVES),glossary:adminDeep(WORKSHOP_GLOSSARY)}}
+function applyAdminConfig(cfg){if(!cfg||typeof cfg!=='object')return;if(Array.isArray(cfg.pillars)&&cfg.pillars.length)replaceArray(PILLARS,cfg.pillars);if(Array.isArray(cfg.objectives)&&cfg.objectives.length)replaceArray(OBJECTIVES,cfg.objectives);if(Array.isArray(cfg.initiatives))replaceArray(INITIATIVES,cfg.initiatives);if(cfg.glossary&&typeof cfg.glossary==='object')replaceObject(WORKSHOP_GLOSSARY,cfg.glossary);if(cfg.foundation)ADMIN_FOUNDATION={...ADMIN_FOUNDATION_DEFAULT,...cfg.foundation};applyFoundationToDom()}
+function applyFoundationToDom(){const f=ADMIN_FOUNDATION;if(document.getElementById('northStarText'))document.getElementById('northStarText').textContent=f.northStar||'';if(document.getElementById('foundationMissionSummary'))document.getElementById('foundationMissionSummary').textContent=f.mission||'';if(document.getElementById('foundationVisionSummary'))document.getElementById('foundationVisionSummary').textContent=f.vision||'';if(document.getElementById('foundationNorthstarSummary'))document.getElementById('foundationNorthstarSummary').textContent=f.northstarSummary||'';if(document.getElementById('foundationValuesSummary'))document.getElementById('foundationValuesSummary').textContent=f.values||'';if(document.getElementById('foundationCadenceSummary'))document.getElementById('foundationCadenceSummary').textContent=f.cadence||''}
+function loadAdminConfig(){const embedded=embeddedAdminConfig();if(Object.keys(embedded).length)applyAdminConfig(embedded);try{const local=JSON.parse(localStorage.getItem(ADMIN_STORAGE_KEY)||'null');if(local)applyAdminConfig(local)}catch(e){};initAdminAccess()}
+function initAdminAccess(){const allowed=new URLSearchParams(location.search).get('admin')==='1';document.getElementById('adminEntryBtn')?.classList.toggle('show',allowed);if(allowed)initAdminEditor()}
+function adminLines(v){return String(v||'').split(/\r?\n/).map(x=>x.trim()).filter(Boolean)}
+function adminSetStatus(msg,kind='ok'){const el=document.getElementById('adminSaveStatus');if(!el)return;el.textContent=msg;el.className='admin-status '+kind}
+function saveAdminConfig(showStatus=false){const cfg=currentAdminConfig();localStorage.setItem(ADMIN_STORAGE_KEY,JSON.stringify(cfg));if(showStatus)adminSetStatus('✓ تغییرات روی همین مرورگر ذخیره شد. برای انتشار عمومی، فایل انتشار را بسازید.','ok');refreshAfterAdminEdit();return cfg}
+function refreshAfterAdminEdit(){applyFoundationToDom();renderMap();renderFilter();renderCheckSelect();renderInitiatives();renderAll();renderWorkshopPillars();fillWorkshopObjectiveSelect();renderAdminSummary()}
+function showAdminSection(key){document.querySelectorAll('.admin-section').forEach(x=>x.style.display=x.dataset.adminPanel===key?'block':'none');document.querySelectorAll('[data-admin-section]').forEach(x=>x.classList.toggle('active',x.dataset.adminSection===key));if(key==='foundation')loadAdminFoundation();if(key==='pillars')renderAdminPillarSelect();if(key==='objectives')renderAdminObjectiveSelect();if(key==='initiatives')renderAdminInitiatives();if(key==='publish')renderAdminSummary()}
+function initAdminEditor(){if(!document.getElementById('adminNav'))return;document.querySelectorAll('[data-admin-section]').forEach(b=>b.onclick=()=>showAdminSection(b.dataset.adminSection));fillAdminTermSelect();loadAdminFoundation();renderAdminPillarSelect();renderAdminObjectiveSelect();renderAdminInitiatives();renderAdminSummary()}
+function loadAdminFoundation(){const f=ADMIN_FOUNDATION;const m={adminNorthStar:'northStar',adminMissionSummary:'mission',adminVisionSummary:'vision',adminNorthstarSummary:'northstarSummary',adminValuesSummary:'values',adminCadenceSummary:'cadence'};Object.entries(m).forEach(([id,k])=>{const el=document.getElementById(id);if(el)el.value=f[k]||''});fillAdminTermSelect();loadAdminTerm()}
+function saveAdminFoundation(){ADMIN_FOUNDATION={northStar:document.getElementById('adminNorthStar').value.trim(),mission:document.getElementById('adminMissionSummary').value.trim(),vision:document.getElementById('adminVisionSummary').value.trim(),northstarSummary:document.getElementById('adminNorthstarSummary').value.trim(),values:document.getElementById('adminValuesSummary').value.trim(),cadence:document.getElementById('adminCadenceSummary').value.trim()};saveAdminTerm(false);saveAdminConfig();adminSetStatus('✓ مبانی و متن آموزشی ذخیره شد.','ok')}
+function fillAdminTermSelect(){const s=document.getElementById('adminTermSelect');if(!s)return;const old=s.value;s.innerHTML=Object.entries(WORKSHOP_GLOSSARY).map(([k,g])=>`<option value="${k}">${g.title||k} · ${g.en||''}</option>`).join('');if(old&&WORKSHOP_GLOSSARY[old])s.value=old}
+function loadAdminTerm(){const key=document.getElementById('adminTermSelect')?.value;if(!key)return;const g=WORKSHOP_GLOSSARY[key]||{};document.getElementById('adminTermTitle').value=g.title||'';document.getElementById('adminTermText').value=g.text||'';document.getElementById('adminTermExample').value=g.example||''}
+function saveAdminTerm(persistNow=true){const key=document.getElementById('adminTermSelect')?.value;if(!key)return;const g=WORKSHOP_GLOSSARY[key]||{};WORKSHOP_GLOSSARY[key]={...g,title:document.getElementById('adminTermTitle').value.trim(),text:document.getElementById('adminTermText').value.trim(),example:document.getElementById('adminTermExample').value.trim()};if(persistNow){saveAdminConfig();adminSetStatus('✓ توضیح اصطلاح ذخیره شد.','ok');fillAdminTermSelect()}}
+function renderAdminPillarSelect(selectId=null){const s=document.getElementById('adminPillarSelect');if(!s)return;s.innerHTML=PILLARS.map(p=>`<option value="${p.id}">P${p.id} — ${p.fa}</option>`).join('');s.value=String(selectId||PILLARS[0]?.id||'');loadAdminPillar();renderAdminObjectivePillarOptions()}
+function loadAdminPillar(){const id=Number(document.getElementById('adminPillarSelect')?.value),p=PILLARS.find(x=>x.id===id);if(!p)return;document.getElementById('adminPillarFa').value=p.fa||'';document.getElementById('adminPillarEn').value=p.en||'';document.getElementById('adminPillarColor').value=p.color||'#4b82df';document.getElementById('adminPillarDesc').value=p.desc||'';document.getElementById('adminPillarKpis').value=(p.kpis||[]).join('\n')}
+function saveAdminPillar(){const id=Number(document.getElementById('adminPillarSelect').value),p=PILLARS.find(x=>x.id===id);if(!p)return;p.fa=document.getElementById('adminPillarFa').value.trim();p.en=document.getElementById('adminPillarEn').value.trim();p.color=document.getElementById('adminPillarColor').value||p.color;p.desc=document.getElementById('adminPillarDesc').value.trim();p.kpis=adminLines(document.getElementById('adminPillarKpis').value);saveAdminConfig();renderAdminPillarSelect(id);adminSetStatus(`✓ Pillar ${id} ذخیره شد.`,'ok')}
+function addAdminPillar(){const id=Math.max(0,...PILLARS.map(x=>Number(x.id)||0))+1;PILLARS.push({id,fa:'ستون راهبردی جدید',en:'New Strategic Pillar',color:'#4b82df',icon:'◆',desc:'',kpis:[]});saveAdminConfig();renderAdminPillarSelect(id);adminSetStatus(`Pillar ${id} ایجاد شد؛ اطلاعاتش را تکمیل کنید.`,'warn')}
+function deleteAdminPillar(){const id=Number(document.getElementById('adminPillarSelect').value);if(OBJECTIVES.some(o=>o.pillar===id)){alert('ابتدا Objectiveهای متصل به این Pillar را به Pillar دیگری منتقل کنید.');return}if(!confirm('این Pillar حذف شود؟'))return;const i=PILLARS.findIndex(x=>x.id===id);if(i>=0)PILLARS.splice(i,1);saveAdminConfig();renderAdminPillarSelect();adminSetStatus('Pillar حذف شد.','warn')}
+function renderAdminObjectivePillarOptions(){const s=document.getElementById('adminObjectivePillar');if(!s)return;const cur=s.value;s.innerHTML=PILLARS.map(p=>`<option value="${p.id}">P${p.id} — ${p.fa}</option>`).join('');if(cur)s.value=cur}
+function renderAdminObjectiveSelect(selectId=null){const s=document.getElementById('adminObjectiveSelect');if(!s)return;s.innerHTML=OBJECTIVES.map(o=>`<option value="${o.id}">O${o.id} — ${o.title}</option>`).join('');s.value=String(selectId||OBJECTIVES[0]?.id||'');renderAdminObjectivePillarOptions();loadAdminObjective()}
+function loadAdminObjective(){const id=Number(document.getElementById('adminObjectiveSelect')?.value),o=OBJECTIVES.find(x=>x.id===id);if(!o)return;renderAdminObjectivePillarOptions();document.getElementById('adminObjectivePillar').value=String(o.pillar);document.getElementById('adminObjectiveTitle').value=o.title||'';document.getElementById('adminObjectiveKrs').value=(o.krs||[]).join('\n')}
+function saveAdminObjective(){const id=Number(document.getElementById('adminObjectiveSelect').value),o=OBJECTIVES.find(x=>x.id===id);if(!o)return;o.pillar=Number(document.getElementById('adminObjectivePillar').value);o.title=document.getElementById('adminObjectiveTitle').value.trim();o.krs=adminLines(document.getElementById('adminObjectiveKrs').value);saveAdminConfig();renderAdminObjectiveSelect(id);adminSetStatus(`✓ Objective O${id} و KRهای آن ذخیره شد.`,'ok')}
+function addAdminObjective(){if(!PILLARS.length){alert('ابتدا حداقل یک Pillar ایجاد کنید.');return}const id=Math.max(0,...OBJECTIVES.map(x=>Number(x.id)||0))+1;OBJECTIVES.push({id,pillar:PILLARS[0].id,title:'Objective جدید',krs:[]});saveAdminConfig();renderAdminObjectiveSelect(id);adminSetStatus(`O${id} ایجاد شد؛ عنوان، Pillar و KRها را تکمیل کنید.`,'warn')}
+function deleteAdminObjective(){const id=Number(document.getElementById('adminObjectiveSelect').value);if(!confirm(`Objective O${id} حذف شود؟ Initiativeهای متصل به آن نیز حذف می‌شوند.`))return;const i=OBJECTIVES.findIndex(x=>x.id===id);if(i>=0)OBJECTIVES.splice(i,1);for(let j=INITIATIVES.length-1;j>=0;j--)if(Number(INITIATIVES[j].goal)===id)INITIATIVES.splice(j,1);saveAdminConfig();renderAdminObjectiveSelect();renderAdminInitiatives();adminSetStatus(`O${id} حذف شد.`,'warn')}
+function renderAdminInitiatives(){const el=document.getElementById('adminInitiativeList');if(el)el.innerHTML=INITIATIVES.length?INITIATIVES.map((x,i)=>`<div class="admin-item"><div><strong>${esc(x.title)}</strong><br><small>O${x.goal} · ${esc(x.unit||'')}</small></div><button class="btn danger" onclick="deleteAdminInitiative(${i})">حذف</button></div>`).join(''):'<div class="empty">Initiative ثبت نشده است.</div>';const s=document.getElementById('adminInitGoal');if(s)s.innerHTML=OBJECTIVES.map(o=>`<option value="${o.id}">O${o.id} — ${o.title}</option>`).join('')}
+function addAdminInitiative(){const title=document.getElementById('adminInitTitle').value.trim(),goal=Number(document.getElementById('adminInitGoal').value),unit=document.getElementById('adminInitUnit').value.trim();if(!title){alert('عنوان Initiative را وارد کنید.');return}INITIATIVES.push({title,goal,unit});document.getElementById('adminInitTitle').value='';document.getElementById('adminInitUnit').value='';saveAdminConfig();renderAdminInitiatives();adminSetStatus('✓ Initiative اضافه شد.','ok')}
+function deleteAdminInitiative(i){if(!confirm('این Initiative حذف شود؟'))return;INITIATIVES.splice(i,1);saveAdminConfig();renderAdminInitiatives();adminSetStatus('Initiative حذف شد.','warn')}
+function renderAdminSummary(){const el=document.getElementById('adminSummary');if(!el)return;const krCount=OBJECTIVES.reduce((n,o)=>n+(o.krs?.length||0),0),kpiCount=PILLARS.reduce((n,p)=>n+(p.kpis?.length||0),0);el.innerHTML=`<span class="admin-badge">${fa(PILLARS.length)} Pillar</span><span class="admin-badge">${fa(OBJECTIVES.length)} Objective</span><span class="admin-badge">${fa(krCount)} KR</span><span class="admin-badge">${fa(kpiCount)} Health KPI</span><span class="admin-badge">${fa(INITIATIVES.length)} Initiative</span><br><br>ساختار فعلیِ ویرایش‌شده از همین داده‌ها در Map، Cascade، Board، کارگاه و فرم Check-in استفاده می‌کند.`}
+function exportAdminConfig(){const blob=new Blob([JSON.stringify(currentAdminConfig(),null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kish-strategy-admin-config.json';a.click();URL.revokeObjectURL(a.href)}
+function importAdminConfig(file){if(!file)return;const r=new FileReader();r.onload=()=>{try{const cfg=JSON.parse(r.result);applyAdminConfig(cfg);saveAdminConfig();initAdminEditor();adminSetStatus('✓ تنظیمات وارد و روی مرورگر ذخیره شد.','ok')}catch(e){alert('فایل JSON معتبر نیست.')}};r.readAsText(file,'utf-8')}
+function resetAdminConfig(){if(!confirm('همه ویرایش‌های محلی پاک شود و نسخه تعبیه‌شده سایت دوباره بارگذاری شود؟'))return;localStorage.removeItem(ADMIN_STORAGE_KEY);location.reload()}
+function publishAdminHtml(){saveAdminConfig();const cfg=currentAdminConfig(),safe=JSON.stringify(cfg).replace(/</g,'\\u003c');const clone=document.documentElement.cloneNode(true),holder=clone.querySelector('#embeddedAdminConfig');if(holder)holder.textContent=safe;clone.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='home'));clone.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page==='home'));clone.querySelector('#glossaryBackdrop')?.classList.remove('show');const title=clone.querySelector('#pageTitle');if(title)title.textContent='خانه مدیریتی';const src='<!DOCTYPE html>\n'+clone.outerHTML,blob=new Blob([src],{type:'text/html;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kish-strategy.html';a.click();URL.revokeObjectURL(a.href);adminSetStatus('✓ فایل انتشار ساخته شد. همین kish-strategy.html را روی فایل قبلی GitHub جایگزین کنید.','ok')}
+
 function renderAll(){renderCascade();renderBoard();renderKPIs();renderTimeline();renderDashboard();renderVitals()}
-const titles={home:'خانه مدیریتی',workshop:'کارگاه تعاملی',strategy:'نقشه و اهداف راهبردی',kpis:'علائم حیاتی سازمان',checkin:'ثبت پیشرفت',dashboard:'داشبورد مدیرعامل'};
-function go(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('pageTitle').textContent=titles[id];if(id==='workshop'){initWorkshop();showWorkshopStep(wsProfile.dept?2:1)}if(id==='kpis')renderKPIs();if(id==='checkin')renderTimeline();if(id==='dashboard')renderDashboard();window.scrollTo({top:0,behavior:'smooth'})}
+const titles={home:'خانه مدیریتی',workshop:'کارگاه تعاملی',strategy:'نقشه و اهداف راهبردی',kpis:'علائم حیاتی سازمان',checkin:'ثبت پیشرفت',dashboard:'داشبورد مدیرعامل',admin:'ویرایشگر مدیر'};
+function go(id){if(id==='admin'&&new URLSearchParams(location.search).get('admin')!=='1'){alert('برای ورود به ویرایشگر، لینک سایت را با ?admin=1 باز کنید.');return}document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('pageTitle').textContent=titles[id]||'';if(id==='workshop'){initWorkshop();showWorkshopStep(wsProfile.dept?2:1)}if(id==='kpis')renderKPIs();if(id==='checkin')renderTimeline();if(id==='dashboard')renderDashboard();if(id==='admin')initAdminEditor();window.scrollTo({top:0,behavior:'smooth'})}
 function exportData(){const blob=new Blob([JSON.stringify({exportedAt:new Date().toISOString(),checks,kpiData,owners,workshop:{profile:wsProfile,draft:wsDraft}},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='kish-strategy-execution-data.json';a.click();URL.revokeObjectURL(a.href)}
 document.getElementById('desktopNav').addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b)go(b.dataset.page)});document.getElementById('mobileNav').addEventListener('click',e=>{const b=e.target.closest('[data-page]');if(b)go(b.dataset.page)});document.getElementById('strategyTabs').addEventListener('click',e=>{const b=e.target.closest('[data-view]');if(b)setStrategy(b.dataset.view)});document.getElementById('searchObj').addEventListener('input',renderCascade);document.getElementById('filterPillar').addEventListener('change',renderCascade);document.getElementById('checkType').addEventListener('change',renderCheckSelect);document.getElementById('checkGoal').addEventListener('change',e=>document.getElementById('checkOwner').value=owners[e.target.value]||'');document.getElementById('checkProgress').addEventListener('input',e=>document.getElementById('rangeValue').textContent=fa(e.target.value)+'٪');
-renderMap();renderFilter();renderCheckSelect();renderInitiatives();renderAll();initWorkshop();
+loadAdminConfig();renderMap();renderFilter();renderCheckSelect();renderInitiatives();renderAll();initWorkshop();
 </script>
 </body></html>
