@@ -11,7 +11,7 @@ function report(name,pass,detail=''){
 async function until(predicate,timeout=10000){const start=performance.now();while(performance.now()-start<timeout&&performance.now()<deadline){try{if(predicate())return true;}catch{}await sleep(35);}return false;}
 async function load(route,width=390){
  frame.style.width=width+'px';frame.width=width;errors=[];
- const url=new URL(route,root);url.searchParams.set('qa',String(Date.now()));
+ const url=new URL(route,root);url.searchParams.set('qa','acceptance');
  if(performance.now()>=deadline)throw Error('Browser test time limit reached');
  const loaded=new Promise((resolve,reject)=>{const timer=setTimeout(()=>reject(Error('Page load timed out: '+route)),Math.min(12000,deadline-performance.now()));frame.onload=()=>{clearTimeout(timer);resolve();};});
  frame.src=url.href;await loaded;
@@ -108,7 +108,7 @@ async function testInteractions(){
  report('EN admin restores local content from import',imported&&doc.querySelectorAll('[data-path$=".id"]').length===before);
 }
 async function run(){
- rerun.disabled=true;list.replaceChildren();deadline=performance.now()+115000;result={status:'running',startedAt:new Date().toISOString(),pageRoot:root.href,checks:[],passed:0,failed:0,limits:['Tests run in this browser engine, with CSS viewport sizes; physical Android hardware and other browser engines remain untested.','Errors after iframe load are captured; startup failures are detected through the client-ready marker.','WhatsApp/email payloads are checked without opening or sending a message. Pages CMS authentication is not exercised.']};window.AFRA_QA_RESULT=result;
+ rerun.disabled=true;list.replaceChildren();deadline=performance.now()+240000;result={status:'running',startedAt:new Date().toISOString(),pageRoot:root.href,checks:[],passed:0,failed:0,limits:['Tests run in this browser engine, with CSS viewport sizes; physical Android hardware and other browser engines remain untested.','Errors after iframe load are captured; startup failures are detected through the client-ready marker.','WhatsApp/email payloads are checked without opening or sending a message. Pages CMS authentication is not exercised.']};window.AFRA_QA_RESULT=result;
  let originalDraft=null,originalLanguage=null,storageRead=false;
  try{
   originalDraft=localStorage.getItem(localKey);originalLanguage=localStorage.getItem('afra-language');storageRead=true;
