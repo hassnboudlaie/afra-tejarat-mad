@@ -34,5 +34,24 @@
     "persian_font_bytes": 241328,
     "english_font_bytes": 164700,
     "note": "File-weight check, not a Lighthouse or field performance score."
+  },
+  "accessibility_public_preview": {
+    "engine": "axe-core 4.10.3 in Cloud Chrome",
+    "completed_cases": 32,
+    "automatic_violations": 0,
+    "runner_errors": 0,
+    "duration_seconds": 66.7,
+    "wcag_tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21a",
+      "wcag21aa"
+    ],
+    "manual_review_rule_groups": 32,
+    "manual_review_targets": [
+      "CTA gradient text",
+      "native RFQ notes textarea"
+    ],
+    "manual_review_resolution": "Contrast checked against the lightest defined gradient colour; actual focused textarea visually inspected and fully visible."
   }
 }
