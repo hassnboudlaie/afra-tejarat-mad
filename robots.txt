@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /afra-tejarat-mad/admin/
-Sitemap: https://hassnboudlaie.github.io/afra-tejarat-mad/sitemap.xml
