@@ -1,0 +1,38 @@
+{
+  "functional_public_preview": {
+    "browser": "Cloud Chrome",
+    "checks_passed": 456,
+    "checks_failed": 0,
+    "duration_seconds": 149.9,
+    "viewport_widths": [
+      360,
+      390,
+      768,
+      1440
+    ],
+    "languages": [
+      "fa",
+      "en"
+    ],
+    "scope": [
+      "64 page-language-viewport cases",
+      "native form validation and reviewed RFQ payloads",
+      "language switch and category context",
+      "navigation and image loading",
+      "search and clear",
+      "local admin editor add/edit/import"
+    ]
+  },
+  "limits": [
+    "Physical Android hardware and other browser engines not exercised.",
+    "No WhatsApp message or email sent; prepared handoff payloads verified.",
+    "Pages CMS account connection requires owner; configuration and local editor tested."
+  ],
+  "resource_budget": {
+    "hero_webp_bytes": 364150,
+    "external_image_and_font_dependencies": 0,
+    "persian_font_bytes": 241328,
+    "english_font_bytes": 164700,
+    "note": "File-weight check, not a Lighthouse or field performance score."
+  }
+}
