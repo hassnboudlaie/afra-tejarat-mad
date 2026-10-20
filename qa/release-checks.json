@@ -53,5 +53,14 @@
       "native RFQ notes textarea"
     ],
     "manual_review_resolution": "Contrast checked against the lightest defined gradient colour; actual focused textarea visually inspected and fully visible."
-  }
+  },
+  "functional_public_production": {
+    "root": "https://hassnboudlaie.github.io/afra-tejarat-mad/",
+    "browser": "Cloud Chrome",
+    "passed": 456,
+    "failed": 0,
+    "duration_seconds": 149.6,
+    "tested_code_commit": "ed621c8bba0fdf51a0810a14300dced716b61009"
+  },
+  "screenshot": "qa/afra-live-fa.jpg"
 }
