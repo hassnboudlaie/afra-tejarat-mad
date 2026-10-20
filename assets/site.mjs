@@ -1,4 +1,4 @@
-import {renderSite,getLabels,routes} from './site-render.mjs';
+import {renderSite,getLabels,routes} from './site-render.mjs?v=20261020-3';
 const body=document.body,lang=document.documentElement.lang==='en'?'en':'fa',page=body.dataset.page,root=body.dataset.root||'./';
 const l=getLabels(lang),query=new URLSearchParams(location.search),categoryId=query.get('id')||'';
 const storage={get:k=>{try{return localStorage.getItem(k)}catch{return null}},set:(k,v)=>{try{localStorage.setItem(k,v)}catch{}},remove:k=>{try{localStorage.removeItem(k)}catch{}}};
