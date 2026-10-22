@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-10-20T06:51:34.281Z",
+  "counts": {
+    "renderedPages": 36,
+    "internalLinks": 858,
+    "images": 120,
+    "localeObjects": 77,
+    "formFields": 18,
+    "rfqLogicScenarios": 3,
+    "cmsFields": 90
+  },
+  "failures": [],
+  "limits": [
+    "Structural and mocked client-logic checks only: browser rendering, native form validation, viewport overflow, keyboard behaviour, CMS authentication and external handoff need public browser QA."
+  ]
+}
