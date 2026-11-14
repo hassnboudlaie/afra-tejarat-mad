@@ -33,8 +33,8 @@ async function main(){
  try{
   const browser=await chromium.launch({headless:true});
   try{
-   for(const width of [390,1366]){
-    const context=await browser.newContext({viewport:{width,height:width===390?844:900},isMobile:width===390,hasTouch:width===390});
+   for(const width of [320,390,768,1366]){
+    const context=await browser.newContext({viewport:{width,height:width<=390?844:width===768?1024:900},isMobile:width<=390,hasTouch:width<=390});
     try{
      const page=await context.newPage(),errors=[];page.on("pageerror",e=>errors.push(e.message));
      const response=await page.goto("http://127.0.0.1:"+server.address().port+"/",{waitUntil:"domcontentloaded",timeout:35000});
@@ -44,6 +44,8 @@ async function main(){
      await page.screenshot({path:path.join(out,repo+"-"+width+".png"),fullPage:false});
      const axe=await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze();
      const high=axe.violations.filter(x=>["serious","critical"].includes(x.impact));
+     if(high.length)console.error("AXE_FINDINGS",JSON.stringify(high.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.slice(0,5).map(n=>n.target)}))));
+     assert.equal(high.length,0,"Serious/critical WCAG accessibility defects");
      console.log("PASS",repo,width,"local font; overflow="+metrics.overflow,"axe serious/critical="+high.length,"runtime warnings="+errors.length);
      if(metrics.overflow>20)throw Error("Severe horizontal overflow "+metrics.overflow+"px at "+width+"px");
     }finally{await context.close()}
