@@ -17,3 +17,8 @@ html[lang=fa] :where(button,input,textarea,select){font-family:Vazirmatn,Tahoma,
  :where(.header-rfq,.button,.menu-toggle){min-height:44px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+/* Deep audit: high-contrast and keyboard/touch resiliency. */
+@media(prefers-contrast:more){:root{--muted:#374d5c;--line:#8a9da3}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-width:4px!important}}
+@media(forced-colors:active){.button,.header-rfq,.menu-toggle,.site-header a{border:1px solid ButtonText}}
+@media(max-width:420px){.header-actions{min-width:0}.button,.header-rfq,.menu-toggle{min-height:44px}}
