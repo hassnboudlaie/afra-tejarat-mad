@@ -1,0 +1,47 @@
+name: Impeccable UX Browser & Production QA
+on: [pull_request, push]
+permissions:
+  contents: read
+jobs:
+  browsers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright @axe-core/playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/impeccable-check.cjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: impeccable-ux-screenshots
+          path: qa-artifacts/*.png
+          if-no-files-found: ignore
+  production:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: browsers
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify deployed asset bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          repo="$(basename "$GITHUB_REPOSITORY")"
+          base="https://hassnboudlaie.github.io/$repo"
+          if [[ "$repo" == "afra-tejarat-mad" ]]; then file="assets/site.css"; else file="impeccable.css"; fi
+          matched=0
+          for attempt in $(seq 1 25); do
+            if curl -fsSL --max-time 20 "$base/$file" -o /tmp/impeccable-css &&
+               curl -fsSL --max-time 20 "$base/index.html" -o /tmp/impeccable-index &&
+               cmp -s "$file" /tmp/impeccable-css &&
+               cmp -s index.html /tmp/impeccable-index; then
+               matched=1;echo "PASS deployed bytes match main: $repo";break
+            fi
+            sleep 12
+          done
+          test "$matched" -eq 1 || { echo "::error::Live release does not match"; exit 1; }
