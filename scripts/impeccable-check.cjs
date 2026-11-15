@@ -19,7 +19,7 @@ if(repo==="naavsanat-culture-app"){
  assert.ok(fs.statSync(path.join(root,"assets/fonts/Vazirmatn.woff2")).size>100000);
  assert.ok(fs.existsSync(path.join(root,"assets/fonts/OFL-Vazirmatn.txt")));
 }
-const mime={".html":"text/html; charset=utf-8",".css":"text/css; charset=utf-8",".js":"text/javascript; charset=utf-8",".woff2":"font/woff2",".ttf":"font/ttf",".png":"image/png",".svg":"image/svg+xml",".webp":"image/webp"};
+const mime={".html":"text/html; charset=utf-8",".css":"text/css; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".woff2":"font/woff2",".ttf":"font/ttf",".png":"image/png",".svg":"image/svg+xml",".webp":"image/webp"};
 const server=http.createServer((req,res)=>{
  try{
   let name=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);if(name.endsWith("/"))name+="index.html";
@@ -48,6 +48,29 @@ async function main(){
      assert.equal(high.length,0,"Serious/critical WCAG accessibility defects");
      console.log("PASS",repo,width,"local font; overflow="+metrics.overflow,"axe serious/critical="+high.length,"runtime warnings="+errors.length);
      if(metrics.overflow>20)throw Error("Severe horizontal overflow "+metrics.overflow+"px at "+width+"px");
+     if(width===390){
+      await page.goto("http://127.0.0.1:"+server.address().port+"/request-quote/",{waitUntil:"domcontentloaded"});
+      await page.waitForFunction(()=>document.body.dataset.ready==="true",{timeout:20000});
+      await page.locator("#rfq-name").fill("آزمون کاربر");
+      await page.locator("#rfq-company").fill("شرکت نمونه");
+      await page.locator("#rfq-email").fill("test@example.com");
+      await page.locator("#rfq-category").selectOption("mining");
+      await page.locator("#rfq-item").fill("نمونه قطعه");
+      await page.locator("#rfq-qty").fill("10 عدد");
+      await page.reload({waitUntil:"domcontentloaded"});
+      await page.waitForFunction(()=>document.body.dataset.ready==="true",{timeout:20000});
+      assert.equal(await page.locator("#rfq-company").inputValue(),"شرکت نمونه","RFQ draft should be restored");
+      assert.match(await page.locator("#form-status").textContent(),/بازیابی شد/,"RFQ restore feedback missing");
+      await page.locator("#rfq-form button[type=submit]").click();
+      assert.equal(await page.locator("#rfq-review:visible").count(),1,"RFQ review step missing");
+      await page.locator("#edit-rfq").click();
+      await page.locator("#clear-draft").click();
+      assert.equal(await page.locator("#rfq-company").inputValue(),"","RFQ clear draft failed");
+      await page.reload({waitUntil:"domcontentloaded"});
+      await page.waitForFunction(()=>document.body.dataset.ready==="true",{timeout:20000});
+      assert.equal(await page.locator("#rfq-company").inputValue(),"","Deleted draft must not return");
+      console.log("PASS RFQ restored draft, review, edit and clear");
+     }
     }finally{await context.close()}
    }
   }finally{await browser.close()}
