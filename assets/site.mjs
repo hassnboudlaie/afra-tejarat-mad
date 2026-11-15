@@ -40,6 +40,10 @@ if(page==='quote'){
  function getDraft(){try{return JSON.parse(storage.get('afra-rfq-draft')||'{}')}catch{return {}}}
  function persist(){const data=Object.fromEntries(keys.map(k=>[k,form.elements.namedItem(k).value]));storage.set('afra-rfq-draft',JSON.stringify(data));}
  const draft=getDraft();for(const k of keys)if(typeof draft[k]==='string')form.elements.namedItem(k).value=draft[k];
+ const restored=keys.some(k=>typeof draft[k]==='string'&&draft[k].trim());
+ if(restored)status.textContent=lang==='en'?
+  'Your previous draft was restored on this device. Nothing has been submitted.':
+  'پیش‌نویس قبلی از همین دستگاه بازیابی شد؛ هنوز درخواستی ارسال نشده است.';
  const cat=query.get('category');if(site.categories.some(x=>x.id===cat))form.elements.namedItem('category').value=cat;
  form.addEventListener('input',persist);form.addEventListener('change',persist);
  form.addEventListener('submit',e=>{
